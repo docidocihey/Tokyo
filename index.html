@@ -1,0 +1,871 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>東京旅遊手冊 · 2026</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --ai:#1E3A54; --ai2:#2C5578; --shu:#C0392B; --washi:#F7F4EF; --card:#FFFFFF;
+ --sumi:#1A1815; --grey:#6E6A62; --line:#E4DFD3; --kin:#A8863B; --take:#4A7C59; --fuji:#6E5289;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--washi);color:var(--sumi);line-height:1.75;
+ font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Hiragino Sans",sans-serif;
+ font-size:15.5px;-webkit-font-smoothing:antialiased}
+.mincho{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif TC","Songti TC",serif}
+a{color:var(--ai2)}
+.wrap{max-width:700px;margin:0 auto}
+.pad{padding:0 18px}
+
+/* HERO */
+.hero{background:var(--ai);color:#fff;padding:44px 18px 30px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;
+ border:1px solid rgba(255,255,255,.13);border-radius:50%}
+.hero::after{content:"";position:absolute;right:-30px;top:-30px;width:160px;height:160px;
+ border:1px solid rgba(255,255,255,.10);border-radius:50%}
+.hero .eyebrow{font-size:12px;letter-spacing:.34em;opacity:.66;margin-bottom:14px}
+.hero h1{font-family:"Hiragino Mincho ProN","Noto Serif TC",serif;font-size:40px;line-height:1.2;
+ font-weight:600;letter-spacing:.06em}
+.hero h1 small{display:block;font-size:16px;letter-spacing:.2em;opacity:.7;margin-top:10px;font-weight:400}
+.hero .lead{font-size:13.5px;opacity:.82;margin-top:16px;line-height:1.9}
+.hero .lead a{color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.18);
+ margin-top:26px;border:1px solid rgba(255,255,255,.18)}
+.stats div{background:var(--ai);padding:12px 6px;text-align:center}
+.stats b{display:block;font-size:21px;font-family:"Hiragino Mincho ProN",serif;line-height:1.2}
+.stats span{font-size:10.5px;opacity:.7;letter-spacing:.08em}
+
+nav{position:sticky;top:0;z-index:20;background:rgba(247,244,239,.96);backdrop-filter:blur(8px);
+ border-bottom:1px solid var(--line);padding:9px 18px;display:flex;gap:7px;overflow-x:auto;
+ -webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;font-size:12.5px;text-decoration:none;color:var(--sumi);
+ border:1px solid var(--line);background:#fff;padding:5px 13px;border-radius:99px}
+nav a.on{background:var(--ai);color:#fff;border-color:var(--ai)}
+
+/* SECTION */
+section{padding:46px 0 6px}
+.shead{margin-bottom:22px}
+.shead .eb{font-size:11px;letter-spacing:.3em;color:var(--kin);margin-bottom:5px}
+.shead h2{font-family:"Hiragino Mincho ProN","Noto Serif TC",serif;font-size:26px;font-weight:600;letter-spacing:.06em}
+.shead p{font-size:13.5px;color:var(--grey);margin-top:6px}
+
+/* DAY CARD */
+.day{background:var(--card);border:1px solid var(--line);margin-bottom:22px;overflow:hidden}
+.dtop{display:flex;align-items:flex-start;gap:14px;padding:20px 18px 16px;border-bottom:1px solid var(--line)}
+.dnum{font-family:"Hiragino Mincho ProN",serif;font-size:34px;line-height:1;color:var(--line);font-weight:600;flex:none}
+.dtop .dt{flex:1}
+.dtop .dd{font-size:11.5px;letter-spacing:.14em;color:var(--grey)}
+.dtop h3{font-family:"Hiragino Mincho ProN","Noto Serif TC",serif;font-size:21px;font-weight:600;margin-top:3px}
+.dtop .em{font-size:26px;flex:none}
+
+.tl{padding:6px 18px 18px}
+.ti{display:flex;gap:14px;padding:15px 0;border-bottom:1px dashed var(--line)}
+.ti:last-child{border-bottom:none}
+.ti .tm{flex:none;width:52px;font-size:13px;font-weight:700;color:var(--ai2);padding-top:2px;
+ font-variant-numeric:tabular-nums}
+.ti .tb{flex:1;min-width:0}
+.ti h4{font-size:16px;font-weight:600;line-height:1.5}
+.ti h4 a{color:var(--sumi);text-decoration:none;border-bottom:1.5px solid var(--ai2)}
+.ti .meta{font-size:12.5px;color:var(--grey);margin-top:4px}
+.ti .meta b{color:var(--sumi)}
+
+.move{display:flex;gap:14px;padding:9px 0;font-size:12.5px;color:var(--ai2);align-items:baseline}
+.move .tm{flex:none;width:52px;text-align:right;font-size:11px;color:var(--grey)}
+.move .mb{flex:1;padding-left:2px}
+.move b{font-weight:700}
+
+.tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.1em;
+ padding:2px 7px;margin-left:6px;vertical-align:2px;color:#fff}
+.tag.opt{background:var(--fuji)} .tag.new{background:var(--kin)}
+.tag.mine{background:var(--kin)} .tag.you{background:var(--ai2)}
+
+.box{margin-top:10px;padding:10px 12px;font-size:13.5px;line-height:1.75;border-left:3px solid}
+.box b{font-weight:700}
+.box.buy{background:rgba(74,124,89,.07);border-color:var(--take)}
+.box.buy .lb{color:var(--take);font-weight:700;margin-right:5px}
+.box.warn{background:rgba(192,57,43,.06);border-color:var(--shu)}
+.box.warn .lb{color:var(--shu);font-weight:700;margin-right:5px}
+.box.opt{background:rgba(110,82,137,.06);border-color:var(--fuji)}
+.box.opt .lb{color:var(--fuji);font-weight:700;margin-right:5px}
+.ti.isopt{background:rgba(110,82,137,.045);margin:0 -18px;padding:15px 18px}
+
+.near{margin-top:10px;font-size:13px;color:var(--grey)}
+.near ul{list-style:none;margin-top:6px}
+.near li{padding:6px 0 6px 14px;position:relative;border-top:1px solid var(--line)}
+.near li::before{content:"";position:absolute;left:0;top:14px;width:5px;height:5px;background:var(--kin)}
+.near a{color:var(--sumi);text-decoration:none;border-bottom:1px solid var(--ai2)}
+
+/* 方案 */
+.plan{border:1px solid var(--line);background:var(--card);margin-bottom:20px}
+.ph{padding:14px 18px;color:#fff;display:flex;align-items:center;gap:10px}
+.pa .ph{background:var(--fuji)} .pb .ph{background:var(--take)}
+.ph .pn{font-size:11px;letter-spacing:.24em;opacity:.8}
+.ph h3{font-family:"Hiragino Mincho ProN",serif;font-size:19px;font-weight:600;letter-spacing:.04em}
+.pcost{padding:12px 18px;background:rgba(0,0,0,.03);border-top:1px solid var(--line);
+ font-size:12.5px;color:var(--grey)}
+.vs{text-align:center;font-size:12px;letter-spacing:.5em;color:var(--grey);margin:8px 0 16px}
+
+/* 區域卡 */
+.areas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:460px){.areas{grid-template-columns:1fr}}
+.ac{background:var(--card);border:1px solid var(--line);padding:14px 14px 13px;position:relative}
+.ac .dir{font-size:10.5px;letter-spacing:.16em;color:var(--grey)}
+.ac h4{font-family:"Hiragino Mincho ProN",serif;font-size:18px;font-weight:600;margin:3px 0 2px}
+.ac .min{font-size:12.5px;color:var(--ai2);font-weight:700}
+.ac .wd{font-size:12.5px;color:var(--grey);margin-top:6px;line-height:1.6}
+.ac .bar{position:absolute;left:0;top:0;bottom:0;width:4px}
+
+/* 表 */
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);
+ border:1px solid var(--line)}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+th{font-size:11.5px;letter-spacing:.1em;color:var(--grey);background:rgba(30,58,84,.045);font-weight:600}
+
+/* 商品卡 */
+.pcard{background:var(--card);border:1px solid var(--line);padding:14px;margin-bottom:10px}
+.pcard .jp{font-family:"Hiragino Mincho ProN",serif;font-size:17px;font-weight:600;line-height:1.4}
+.pcard .tw{font-size:12.5px;color:var(--grey);margin:2px 0 8px}
+.pcard .ds{font-size:13.5px;line-height:1.75}
+.pcard .pic{display:inline-block;margin-top:10px;font-size:12px;text-decoration:none;
+ border:1px solid var(--ai2);color:var(--ai2);padding:4px 11px}
+
+/* 清單 */
+.cks{background:var(--card);border:1px solid var(--line);padding:6px 14px 10px}
+.ckh{font-size:12px;letter-spacing:.14em;color:var(--kin);font-weight:700;margin:12px 0 4px}
+.ck{display:flex;gap:10px;padding:7px 0;font-size:14.5px;cursor:pointer;border-bottom:1px solid var(--line)}
+.ck:last-child{border-bottom:none}
+.ck input{margin-top:5px;width:17px;height:17px;flex:none;accent-color:var(--take)}
+.ck input:checked+span{color:var(--grey);text-decoration:line-through}
+
+.money{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;font-size:13.5px;
+ background:var(--card);border:1px solid var(--line);border-bottom:none}
+.money:last-of-type{border-bottom:1px solid var(--line)}
+.money .amt{font-variant-numeric:tabular-nums;font-weight:700;flex:none}
+.total{display:flex;justify-content:space-between;padding:15px 14px;background:var(--ai);color:#fff;
+ font-size:17px;font-weight:700;margin-top:10px}
+.total .amt{font-variant-numeric:tabular-nums}
+
+.callout{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--shu);
+ padding:15px 16px;margin:16px 0;font-size:13.5px;line-height:1.8}
+.callout .ttl{font-weight:700;color:var(--shu);margin-bottom:6px;font-size:14.5px}
+.callout.k{border-top-color:var(--kin)} .callout.k .ttl{color:var(--kin)}
+.callout.f{border-top-color:var(--fuji)} .callout.f .ttl{color:var(--fuji)}
+
+footer{background:var(--ai);color:rgba(255,255,255,.62);padding:34px 18px 44px;margin-top:50px;
+ font-size:12px;line-height:1.9;text-align:center}
+footer .fb{font-family:"Hiragino Mincho ProN",serif;font-size:17px;color:#fff;letter-spacing:.2em;margin-bottom:8px}
+@media print{nav{display:none}body{background:#fff}}
+
+.mapwrap{margin:14px 0 18px}
+.mapwrap svg{width:100%;height:auto;display:block;max-width:420px;margin:0 auto}
+.maplist{list-style:none;margin:12px 0 0;padding:0;
+ display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media(max-width:470px){.maplist{grid-template-columns:1fr}}
+.maplist li{display:flex;align-items:baseline;gap:9px;padding:6px 0;
+ border-bottom:1px solid var(--line);font-size:13.5px}
+.maplist i{flex:none;width:21px;height:21px;border-radius:50%;color:#fff;
+ font-style:normal;font-size:10.5px;font-weight:700;display:flex;
+ align-items:center;justify-content:center;align-self:center}
+.maplist .ml-n{flex:1;min-width:0}
+.maplist .ml-t{flex:none;font-size:11.5px;color:var(--grey);font-variant-numeric:tabular-nums}
+.daymap{background:var(--card);border:1px solid var(--line);padding:14px 16px 16px;margin-bottom:0;border-bottom:none}
+.daymap .mh{font-size:11.5px;letter-spacing:.2em;color:var(--kin);font-weight:700;margin-bottom:2px}
+.daymap .ms{font-size:13px;color:var(--grey)}
+</style></head><body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">TOKYO · 2026</div>
+  <h1>東京 四日<small>九月二十五日 — 二十八日</small></h1>
+  <p class="lead">
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Four%20Seasons%20Hotel%20Tokyo%20at%20Otemachi&amp;query_place_id=ChIJ_3Gd30-NGGARnuBcbf29bPA">大手町 四季酒店</a>　·　NH852 去 · BR189 回<br>
+    店名可以點，會開 Google 地圖　·　紫色標「任意」的可以刪
+  </p>
+  <div class="stats">
+    <div><b>4</b><span>天</span></div>
+    <div><b>2</b><span>方案擇一</span></div>
+    <div><b>6</b><span>間神社</span></div>
+    <div><b>58</b><span>個地點</span></div>
+  </div>
+</header>
+
+<nav>
+  <a href="#area">區域</a><a href="#d1">9/25</a><a href="#d2">9/26</a>
+  <a href="#d3">9/27</a><a href="#d4">9/28</a><a href="#hotel">飯店</a>
+  <a href="#money">現金</a><a href="#tax">退稅</a><a href="#book">要訂</a>
+  <a href="#shop">購物</a><a href="#pack">行李</a><a href="#care">注意</a>
+</nav>
+
+<div class="pad">
+
+<section id="area">
+<div class="shead"><div class="eb">OVERVIEW</div><h2>四天的相對位置</h2><p>真實經緯度畫的。黑點是飯店，所有行程從這裡出發。</p></div>
+<div class="daymap"><div class="mh">東京核心</div><div class="ms">飯店周圍 20 分鐘內就裝下了 9/25 和 9/26 的全部行程</div><div class="mapwrap"><svg viewBox="0 0 358 365" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+.bgb{fill:#FFFFFF;stroke:#E4DFD3}
+.rt{stroke:#1E3A54;stroke-width:1.6;stroke-dasharray:5 4;fill:none;opacity:.75}
+.pin{fill:#1E3A54}
+.pn{font:700 10.5px -apple-system,sans-serif;fill:#fff;text-anchor:middle}
+.hubp{fill:#1A1815}
+.sc{stroke:#9A958B;stroke-width:1}
+.sct{font:400 9px -apple-system,sans-serif;fill:#9A958B}
+</style></defs>
+<rect class="bgb" x="4" y="4" width="350" height="357"/>
+<circle class="hubp" cx="236.8" cy="248.4" r="10"/>
+<text class="pn" x="236.8" y="252.1">H</text>
+<circle class="pin" cx="235.6" cy="328.2" r="10"/>
+<text class="pn" x="235.6" y="331.9">1</text>
+<circle class="pin" cx="172.3" cy="188.8" r="10"/>
+<text class="pn" x="172.3" y="192.5">2</text>
+<circle class="pin" cx="121.6" cy="331.1" r="10"/>
+<text class="pn" x="121.6" y="334.8">3</text>
+<circle class="pin" cx="294.5" cy="261.4" r="10"/>
+<text class="pn" x="294.5" y="265.1">4</text>
+<circle class="pin" cx="234.4" cy="216.9" r="10"/>
+<text class="pn" x="234.4" y="220.6">5</text>
+<circle class="pin" cx="324.0" cy="196.1" r="10"/>
+<text class="pn" x="324.0" y="199.8">6</text>
+<circle class="pin" cx="34.0" cy="34.0" r="10"/>
+<text class="pn" x="34.0" y="37.7">7</text>
+<line class="sc" x1="34" y1="351.104552361176" x2="77.6" y2="351.104552361176"/>
+<line class="sc" x1="34" y1="347.104552361176" x2="34" y2="355.104552361176"/>
+<line class="sc" x1="77.6" y1="347.104552361176" x2="77.6" y2="355.104552361176"/>
+<text class="sct" x="83.6" y="354.604552361176">1 公里</text>
+<path d="M336 22 l4 10 -4 -2.5 -4 2.5 z" fill="#C0392B"/>
+<text class="sct" x="336" y="44" text-anchor="middle">N</text>
+<g>
+<path d="M44 44 l-16 -16 M28 28 l0 14 M28 28 l14 0" stroke="#6E5289" stroke-width="2" fill="none"/>
+<text x="50" y="36" style="font:700 10.5px -apple-system,sans-serif;fill:#6E5289">豐島園 40分</text>
+<text x="50" y="48" style="font:400 9px -apple-system,sans-serif;fill:#6A665E">9/27 方案A · 西北</text>
+<path d="M44 318 l-16 16 M28 334 l0 -14 M28 334 l14 0" stroke="#4A7C59" stroke-width="2" fill="none"/>
+<text x="50" y="326" style="font:700 10.5px -apple-system,sans-serif;fill:#4A7C59">鎌倉 JR 55分</text>
+<text x="50" y="338" style="font:400 9px -apple-system,sans-serif;fill:#6A665E">9/27 方案B · 西南 45 公里</text>
+<path d="M300 318 l14 16 M314 334 l0 -14 M314 334 l-12 0" stroke="#A8863B" stroke-width="2" fill="none"/>
+<text x="296" y="326" text-anchor="end" style="font:700 10.5px -apple-system,sans-serif;fill:#A8863B">羽田 40分</text>
+<text x="296" y="338" text-anchor="end" style="font:400 9px -apple-system,sans-serif;fill:#6A665E">9/28 · 正南</text>
+</g></svg></div><ol class="maplist"><li><i style="background:#1A1815">H</i><span class="ml-n">飯店 大手町</span><span class="ml-t">19:00 進出都從這裡</span></li><li><i style="background:#1E3A54">1</i><span class="ml-n">銀座・有樂町</span><span class="ml-t">9/25 夜・9/26 午後</span></li><li><i style="background:#1E3A54">2</i><span class="ml-n">飯田橋</span><span class="ml-t">9/26 早　東京大神宮</span></li><li><i style="background:#1E3A54">3</i><span class="ml-n">永田町・赤坂</span><span class="ml-t">9/26 早　三間神社</span></li><li><i style="background:#1E3A54">4</i><span class="ml-n">日本橋・人形町</span><span class="ml-t">9/26 傍晚　小網神社・豆皮壽司</span></li><li><i style="background:#1E3A54">5</i><span class="ml-n">神田小川町</span><span class="ml-t">9/26 夜　雪具街</span></li><li><i style="background:#1E3A54">6</i><span class="ml-n">淺草橋</span><span class="ml-t">9/26 夜　牛舌</span></li><li><i style="background:#1E3A54">7</i><span class="ml-n">池袋</span><span class="ml-t">9/27 方案A 夜</span></li></ol></div><div class="callout k"><div class="ttl">遠的三個不在圖內</div>豐島園（9/27 方案 A）在西北、鎌倉（9/27 方案 B）在西南 45 公里、羽田在正南，用箭頭標在圖的三個角。<b>9/27 不管選哪案都是單獨往一個方向遠征</b>，一整天只跑得動一條線。</div>
+</section><section id="d1">
+  <div class="shead"><div class="eb">DAY 01</div><h2>抵達・千層・拉麵</h2></div><div class="daymap"><div class="mh">9/25 路線</div><div class="ms">一路往南，全在大手町–銀座這條線上</div><div class="mapwrap"><svg viewBox="0 0 268 488" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+.bgb{fill:#FFFFFF;stroke:#E4DFD3}
+.rt{stroke:#C0392B;stroke-width:1.6;stroke-dasharray:5 4;fill:none;opacity:.75}
+.pin{fill:#C0392B}
+.pn{font:700 10.5px -apple-system,sans-serif;fill:#fff;text-anchor:middle}
+.hubp{fill:#1A1815}
+.sc{stroke:#9A958B;stroke-width:1}
+.sct{font:400 9px -apple-system,sans-serif;fill:#9A958B}
+</style></defs>
+<rect class="bgb" x="4" y="4" width="260" height="480"/>
+<polyline class="rt" points="148.9,34.0 152.2,164.5 115.8,370.4 125.7,454.0"/>
+<circle class="hubp" cx="148.9" cy="34.0" r="10"/>
+<text class="pn" x="148.9" y="37.7">H</text>
+<circle class="pin" cx="152.2" cy="164.5" r="10"/>
+<text class="pn" x="152.2" y="168.2">1</text>
+<circle class="pin" cx="115.8" cy="370.4" r="10"/>
+<text class="pn" x="115.8" y="374.1">2</text>
+<circle class="pin" cx="125.7" cy="454.0" r="10"/>
+<text class="pn" x="125.7" y="457.7">3</text>
+<line class="sc" x1="34" y1="474" x2="217.7" y2="474"/>
+<line class="sc" x1="34" y1="470" x2="34" y2="478"/>
+<line class="sc" x1="217.7" y1="470" x2="217.7" y2="478"/>
+<text class="sct" x="223.7" y="477.5">1 公里</text>
+<path d="M246 22 l4 10 -4 -2.5 -4 2.5 z" fill="#C0392B"/>
+<text class="sct" x="246" y="44" text-anchor="middle">N</text>
+</svg></div><ol class="maplist"><li><i style="background:#1A1815">H</i><span class="ml-n">飯店</span><span class="ml-t">19:00</span></li><li><i style="background:#C0392B">1</i><span class="ml-n">HARBS 丸大樓</span><span class="ml-t">19:20 千層外帶</span></li><li><i style="background:#C0392B">2</i><span class="ml-n">銀座 篝</span><span class="ml-t">20:00 拉麵</span></li><li><i style="background:#C0392B">3</i><span class="ml-n">唐吉訶德 銀座</span><span class="ml-t">21:00 藥妝</span></li></ol></div>
+  <div class="day">
+    <div class="dtop"><div class="dnum">01</div>
+      <div class="dt"><div class="dd">9月25日 · 金曜日</div><h3>大手町 → 銀座</h3></div>
+      <div class="em">🍜</div></div>
+    <div class="tl">
+      <div class="ti"><div class="tm">17:45</div><div class="tb">
+        <h4>🛬 落地羽田 T2</h4>
+        <div class="meta">通關、領行李、進市區抓 1 小時。出關先買 Suica 或用手機加值。</div></div></div>
+
+      <div class="move"><div class="tm">8 分</div><div class="mb">飯店 → <b>走路</b> → 丸大樓（東京車站丸之內口正對面）</div></div>
+
+      <div class="ti"><div class="tm">19:00</div><div class="tb">
+        <h4>🏨 飯店 check in</h4>
+        <div class="meta">行李先不用拆，拿了房卡就出門</div></div></div>
+
+      <div class="ti"><div class="tm">19:20</div><div class="tb">
+        <h4>🍰 <a href="https://www.google.com/maps/search/?api=1&amp;query=HARBS%20%E4%B8%B8%E3%83%93%E3%83%AB%E6%9C%AC%E5%BA%97&amp;query_place_id=ChIJH8vQ7fmLGGARClefgCoAs9M">HARBS 丸之內大樓店</a></h4>
+        <div class="meta">丸之內 2-4-1 丸大樓 3F｜<b>11:00–20:00</b>｜4.1★／697 則</div>
+        <div class="box buy"><span class="lb">買</span>ミルクレープ（千層蛋糕），直接說 take out。內用每人強制點飲料、一份約 ¥2,000 還要等位。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=HARBS%20%E3%83%9F%E3%83%AB%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%97">看照片</a></div>
+        <div class="box warn"><span class="lb">注意</span>20:00 打烊。班機延誤就會卡掉，買不到改 9/27 晚上。</div></div></div>
+
+      <div class="ti"><div class="tm">19:35</div><div class="tb">
+        <h4>🧁 回房間放蛋糕</h4>
+        <div class="meta">鮮奶油的，不要提著去排拉麵</div></div></div>
+
+      <div class="move"><div class="tm">3 分</div><div class="mb">大手町 → <b>丸之內線 2 站</b> → 銀座 → 走路 7 分鐘</div></div>
+
+      <div class="ti"><div class="tm">20:00</div><div class="tb">
+        <h4>🍜 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8A%80%E5%BA%A7%20%E7%AF%9D%20%E6%9C%AC%E5%BA%97&amp;query_place_id=ChIJjykJZCCLGGARMx5vYqRsWYI">銀座 篝 本店</a></h4>
+        <div class="meta">銀座 6-4-12｜週五 <b>11:00–22:00</b>｜4.2★／4,679 則｜約 15 個吧台座、不接受預約</div>
+        <div class="box buy"><span class="lb">點</span>雞白湯 SOBA。松露版約 ¥3,400，評論說第二次可以省下松露。配一碗牛肉飯。</div>
+        <div class="box warn"><span class="lb">注意</span>22:00 是打烊不是收客截止，排隊常提早停收，<b>九點前要排進隊伍裡</b>。排隊時店員會先來點餐，先想好要什麼。</div></div></div>
+
+      <div class="move"><div class="tm">3 分</div><div class="mb">篝 → <b>走路</b> → 唐吉訶德</div></div>
+
+      <div class="ti"><div class="tm">21:00</div><div class="tb">
+        <h4>🛒 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86%20%E9%8A%80%E5%BA%A7%E6%9C%AC%E9%A4%A8&amp;query_place_id=ChIJE1wGD-iLGGARyisyYKXJcV8">唐吉訶德 銀座本館</a></h4>
+        <div class="meta">GINZA NINE 3｜<b>24 小時</b>｜這時間銀座只剩這家開著</div>
+        <div class="box buy"><span class="lb">買</span>藥妝、限定 KitKat、抹茶粉、零食。滿 ¥5,000 免稅，<b>結帳前先把護照拿出來</b>。</div></div></div>
+    </div>
+  </div>
+</section><section id="d2">
+  <div class="shead"><div class="eb">DAY 02</div><h2>御守・銀座</h2>
+  <p>上午四間神社一路往西南，中午回銀座，傍晚在飯店旁邊。</p></div><div class="daymap"><div class="mh">9/26 路線</div><div class="ms">上午往西北再往西南跑四間神社，中午折回銀座，下午收在飯店附近，<b>傍晚北上東京巨蛋飯店</b></div><div class="mapwrap"><svg viewBox="0 0 358 370" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+.bgb{fill:#FFFFFF;stroke:#E4DFD3}
+.rt{stroke:#1E3A54;stroke-width:1.6;stroke-dasharray:5 4;fill:none;opacity:.75}
+.pin{fill:#1E3A54} .hubp{fill:#1A1815}
+.pn{font:700 10.5px -apple-system,sans-serif;fill:#fff;text-anchor:middle}
+.sc{stroke:#9A958B;stroke-width:1} .sct{font:400 9px -apple-system,sans-serif;fill:#9A958B}
+</style></defs>
+<rect class="bgb" x="4" y="4" width="350" height="362"/>
+<polyline class="rt" points="277.7,170.0 164.5,65.5 114.8,280.6 85.8,335.8 34.0,330.7 268.8,313.7 298.5,285.7 301.2,293.3 324.0,150.5 277.7,170.0 209.4,34.0"/>
+<circle class="hubp" cx="277.7" cy="170.0" r="10"/>
+<text class="pn" x="277.7" y="173.7">H</text>
+<circle class="pin" cx="164.5" cy="65.5" r="10"/>
+<text class="pn" x="164.5" y="69.2">1</text>
+<circle class="pin" cx="114.8" cy="280.6" r="10"/>
+<text class="pn" x="114.8" y="284.3">2</text>
+<circle class="pin" cx="85.8" cy="335.8" r="10"/>
+<text class="pn" x="85.8" y="339.5">3</text>
+<circle class="pin" cx="34.0" cy="330.7" r="10"/>
+<text class="pn" x="34.0" y="334.4">4</text>
+<circle class="pin" cx="268.8" cy="313.7" r="10"/>
+<text class="pn" x="268.8" y="317.4">5</text>
+<circle class="pin" cx="298.5" cy="285.7" r="10"/>
+<text class="pn" x="298.5" y="289.4">6</text>
+<circle class="pin" cx="301.2" cy="293.3" r="10"/>
+<text class="pn" x="301.2" y="297.0">7</text>
+<circle class="pin" cx="324.0" cy="150.5" r="10"/>
+<text class="pn" x="324.0" y="154.2">8</text>
+<circle class="hubp" cx="277.7" cy="170.0" r="10"/>
+<text class="pn" x="277.7" y="173.7">H</text>
+<circle class="hubp" cx="209.4" cy="34.0" r="10"/>
+<text class="pn" x="209.4" y="37.7">宴</text>
+<line class="sc" x1="34" y1="355.83969936841953" x2="110.6" y2="355.83969936841953"/>
+<line class="sc" x1="34" y1="351.83969936841953" x2="34" y2="359.83969936841953"/>
+<line class="sc" x1="110.6" y1="351.83969936841953" x2="110.6" y2="359.83969936841953"/>
+<text class="sct" x="116.6" y="359.33969936841953">1 公里</text>
+<path d="M336 22 l4 10 -4 -2.5 -4 2.5 z" fill="#C0392B"/>
+<text class="sct" x="336" y="44" text-anchor="middle">N</text>
+</svg></div><ol class="maplist"><li><i style="background:#1A1815">H</i><span class="ml-n">飯店 大手町</span><span class="ml-t">08:00 出發</span></li><li><i style="background:#1E3A54">1</i><span class="ml-n">東京大神宮</span><span class="ml-t">08:00 鈴蘭守</span></li><li><i style="background:#1E3A54">2</i><span class="ml-n">日枝神社</span><span class="ml-t">09:00 神猿守</span></li><li><i style="background:#1E3A54">3</i><span class="ml-n">赤坂冰川神社</span><span class="ml-t">10:00 花福鈴</span></li><li><i style="background:#1E3A54">4</i><span class="ml-n">乃木神社</span><span class="ml-t">10:55 ひめ守</span></li><li><i style="background:#1E3A54">5</i><span class="ml-n">佐藤養助 銀座</span><span class="ml-t">11:50 稻庭烏龍麵</span></li><li><i style="background:#1E3A54">6</i><span class="ml-n">銀座 LOFT・HANDS</span><span class="ml-t">12:45 逛街</span></li><li><i style="background:#1E3A54">7</i><span class="ml-n">bills 銀座</span><span class="ml-t">13:50 鬆餅</span></li><li><i style="background:#1E3A54">8</i><span class="ml-n">下午二選一（見下）</span><span class="ml-t">15:00–16:15</span></li><li><i style="background:#1A1815">H</i><span class="ml-n">回飯店換裝</span><span class="ml-t">16:30</span></li><li><i style="background:#1A1815">宴</i><span class="ml-n">東京巨蛋飯店 天空B</span><span class="ml-t">18:00 宴會</span></li></ol></div>
+  <div class="day">
+    <div class="dtop"><div class="dnum">02</div>
+      <div class="dt"><div class="dd">9月26日 · 土曜日</div><h3>飯田橋 → 赤坂 → 銀座 → 日本橋</h3></div>
+      <div class="em">⛩️</div></div>
+    <div class="tl">
+      <div class="move"><div class="tm">6 分</div><div class="mb">大手町 → <b>東西線 3 站</b> → 飯田橋 A4 出口 → 走路 5 分鐘</div></div>
+
+      <div class="ti"><div class="tm">08:00</div><div class="tb">
+        <h4>⛩️ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E7%A5%9E%E5%AE%AE&amp;query_place_id=ChIJq6q63UOMGGAR7zYBKd7iI3I">東京大神宮</a></h4>
+        <div class="meta">千代田區富士見 2-4-1｜<b>授與所 8:00–19:00</b>｜4.4★／12,492 則</div>
+        <div class="box buy"><span class="lb">買</span><b>鈴蘭守</b>，結緣系列最紅。另有<b>鈴蘭串珠守</b>，帶串珠更像花。抽籤就抽「戀みくじ」。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E6%9D%B1%E4%BA%AC%E5%A4%A7%E7%A5%9E%E5%AE%AE%20%E3%81%99%E3%81%9A%E3%82%89%E3%82%93%E5%AE%88">看照片</a></div>
+        <div class="box warn"><span class="lb">注意</span>授與所<b>只收現金</b>。八點開門第一個到不用排。</div></div></div>
+
+      <div class="move"><div class="tm">8 分</div><div class="mb">飯田橋 → <b>南北線直達 3 站</b> → 永田町 → 走路 3 分鐘</div></div>
+
+      <div class="ti"><div class="tm">09:00</div><div class="tb">
+        <h4>⛩️ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A5%E6%9E%9D%E7%A5%9E%E7%A4%BE&amp;query_place_id=ChIJF0MR5MSmH2ARj3x0ov0aQ-8">日枝神社</a></h4>
+        <div class="meta">永田町 2-10-5｜<b>6:00–17:00</b>｜4.4★／12,915 則</div>
+        <div class="box buy"><span class="lb">買</span><b>神猿（まさる）守</b>。猿通「緣」，也取「勝る・魔去る」的諧音。求御朱印會附小紀念品。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E6%97%A5%E6%9E%9D%E7%A5%9E%E7%A4%BE%20%E3%81%BE%E3%81%95%E3%82%8B%E5%AE%88">看照片</a></div>
+        <div class="meta">必看<b>朱紅色鳥居隧道</b>，東京版伏見稻荷。有電扶梯，不用爬階梯。</div></div></div>
+
+      <div class="move"><div class="tm">15 分</div><div class="mb">日枝神社 → <b>走路</b> → 赤坂冰川神社</div></div>
+
+      <div class="ti"><div class="tm">10:00</div><div class="tb">
+        <h4>⛩️ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B5%A4%E5%9D%82%E6%B0%B7%E5%B7%9D%E7%A5%9E%E7%A4%BE&amp;query_place_id=ChIJTdfLJPPoGGARXduE59QUMek">赤坂冰川神社</a></h4>
+        <div class="meta">赤坂 6-10-12｜<b>社務所 9:00–17:00</b>｜4.4★／3,091 則</div>
+        <div class="box buy"><span class="lb">買</span><b>花福鈴</b>——小土鈴畫日本花卉，<b>每月圖案不同</b>。搭<b>やかん鈴</b>據說良緣效果更好。還有<b>銀杏守</b>，取自境內 400 多歲的大銀杏。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E8%B5%A4%E5%9D%82%E6%B0%B7%E5%B7%9D%E7%A5%9E%E7%A4%BE%20%E8%8A%B1%E7%A6%8F%E9%88%B4">看照片</a></div>
+        <div class="meta">江戶時期建築、東京都重要文化財。觀光客少。</div></div></div>
+
+      <div class="move"><div class="tm">10 分</div><div class="mb">冰川神社 → <b>走路 700 公尺</b> → 乃木神社</div></div>
+
+      <div class="ti"><div class="tm">10:55</div><div class="tb">
+        <h4>⛩️ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B9%83%E6%9C%A8%E7%A5%9E%E7%A4%BE&amp;query_place_id=ChIJwR2lZ36LGGAR43Z0b6e3Gw4">乃木神社</a></h4>
+        <div class="meta">赤坂 8-11-27｜<b>授與所 9:00–17:00</b>｜4.4★／4,676 則｜乃木坂站旁</div>
+        <div class="box buy"><span class="lb">買</span><b>ひめ守</b>。錦袋裡有紙和木札，願望寫在紙上、木札包好隨身帶；實現後還回神社，錦袋就能當小袋用。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E4%B9%83%E6%9C%A8%E7%A5%9E%E7%A4%BE%20%E3%81%B2%E3%82%81%E5%AE%88">看照片</a></div></div></div>
+
+      <div class="move"><div class="tm">20 分</div><div class="mb">乃木坂 → <b>千代田線 + 銀座線</b> → 銀座</div></div>
+
+      <div class="ti"><div class="tm">11:50</div><div class="tb">
+        <h4>🍜 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BD%90%E8%97%A4%E9%A4%8A%E5%8A%A9%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJDdYoQO-LGGAR6pQ8fTaV67I">佐藤養助 銀座</a><span class="tag new">你清單上的</span></h4>
+        <div class="meta">銀座 6-4-17 銀座出井大樓 1F｜週六 11:30–14:30、17:00–20:00｜4.2★／2,531 則｜<b>就在篝隔壁那條</b></div>
+        <div class="box buy"><span class="lb">點</span>秋田稻庭烏龍麵，比一般烏龍細、口感滑順。<b>附兩種醬汁，芝麻醬那個必試</b>。冷的沾麵版本評價最高。天婦羅套餐也很多人點。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E4%BD%90%E8%97%A4%E9%A4%8A%E5%8A%A9%20%E7%A8%B2%E5%BA%AD%E3%81%86%E3%81%A9%E3%82%93">看照片</a></div>
+        <div class="box warn"><span class="lb">注意</span>有評論說尖峰要排 <b>40 分鐘</b>。可以先逛一下 12:30 再來，或改去下面兩家。</div>
+        <div class="near"><ul>
+        <li><b>備案</b>　<a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%94%E4%BB%A3%E7%9B%AE%20%E8%8A%B1%E5%B1%B1%E3%81%86%E3%81%A9%E3%82%93%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJ3Q5zleCLGGARnuvHr-FOgMM">五代目 花山うどん 銀座</a>　4.2★／2,511 則｜<b>慎入</b>：每日限量，有人 17:38 到已經是第 33 號、17:50 號碼就發完了，也有人早上 9:50 就去排。你這天沒有那種時間</li>
+        </ul></div></div></div>
+
+      <div class="ti"><div class="tm">12:45</div><div class="tb">
+        <h4>🛍️ 銀座逛街</h4>
+        <div class="near"><ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%A6%E3%83%8B%E3%82%AF%E3%83%AD%20%E9%8A%80%E5%BA%A7%E5%BA%97&amp;query_place_id=ChIJb9MHbuaLGGAR0xi-noU25UU">UNIQLO 銀座旗艦</a>　11:00–21:00｜12 層，有免稅專櫃，頂樓 UNIQLO COFFEE</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%84%A1%E5%8D%B0%E8%89%AF%E5%93%81%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJfc-uOKqLGGAR-bVyIUWjtQo">無印良品銀座旗艦</a>　11:00–21:00｜全球旗艦 11 層，<b>食品區必逛</b>，免稅在 4F</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8A%80%E5%BA%A7%E3%83%AD%E3%83%95%E3%83%88&amp;query_place_id=ChIJqdKZXOSLGGARTJzuDTGhPjI">銀座 LOFT</a>　11:00–21:00｜<b>Shupatto 傘、Wpc. 傘、vim mist 都在這</b>。免稅在 3F、<b>20:00 停收</b></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=HANDS%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJyak5_-SLGGARvezBKVRicSA">HANDS 銀座</a>　11:00–21:00｜馬羅尼耶門 5–9F，<b>MYTREX 眼罩在這</b></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=COVERMARK%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJwV8jkOaLGGAR9TXkl8shkLI">COVERMARK 直營店</a>　10:00–20:00｜比松屋櫃好，<b>先試色</b>，可要試用包</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Onitsuka%20Tiger%20Yellow%20Concept%20Store&amp;query_place_id=ChIJY66tmGyLGGARs7Gkr0o8518">Onitsuka Tiger Yellow</a>　11:00–20:00｜三家裡評價最高、人最少</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=GINZA%20SIX&amp;query_place_id=ChIJAQAsR--LGGAR_AmB8WMDy88">GINZA SIX</a>　10:30–20:30　·　<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%BE%E5%B1%8B%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJ5UsboeaLGGARV2ODxt0ic1I">松屋銀座</a>　11:00–20:00｜B1、B2 食品樓層</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8A%80%E5%BA%A7%20%E4%BC%8A%E6%9D%B1%E5%B1%8B%20%E6%9C%AC%E5%BA%97&amp;query_place_id=ChIJKQAKAOSLGGARwGhpOXWgfYo">銀座伊東屋</a>　10:00–20:00｜文具聖地 12 層</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dover%20Street%20Market%20Ginza&amp;query_place_id=ChIJCyrxGuaLGGARJWVsJlwEERU">Dover Street Market 銀座</a>　11:00–20:00｜4.2★／1,477 則，設計師品牌多層選物店。評論說「更像策展而不是賣店，每層一個主題」，不買也值得看</li>
+        </ul></div></div></div>
+
+      <div class="ti"><div class="tm">13:50</div><div class="tb">
+        <h4>🥞 <a href="https://www.google.com/maps/search/?api=1&amp;query=bills%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJ4wnkFeSLGGARliQwUPoODeY">bills 銀座</a></h4>
+        <div class="meta">銀座 2-6-12 Okura House 12F｜<b>8:30–23:00 天天開</b>｜4.1★／3,229 則</div>
+        <div class="box buy"><span class="lb">點</span>ricotta 鬆餅。咖啡評價也很高。窗景俯瞰銀座。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=bills%20%E3%83%AA%E3%82%B3%E3%83%83%E3%82%BF%E3%83%91%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%AD">看照片</a></div></div></div>
+
+      <div class="ti"><div class="tm">14:30</div><div class="tb">
+        <h4>🔀 下午二選一，<b>只做得完一個</b></h4>
+        <div class="box buy"><span class="lb">選項甲</span><b>神田小川町 雪具街</b>（15:00–16:15）——你傳的 Burton 和 Switch 都在這條街。銀座搭丸之內線到淡路町約 10 分鐘。<br>
+        <b><a href="https://www.google.com/maps/search/?api=1&amp;query=Burton%20%E7%A5%9E%E7%94%B0%E5%B0%8F%E5%B7%9D%E7%94%BA&amp;query_place_id=ChIJtdtB1LaNGGARL2YjX3rUqtw">Burton</a></b>　小川町 3-1｜11:00–19:30｜<b>4.8★／419 則</b>｜+81 3-5577-6907<br>
+        <b><a href="https://www.google.com/maps/search/?api=1&amp;query=Switch%20Active%20Sports%20East&amp;query_place_id=ChIJK6YdsxqMGGAR0hf67WFy8g0">Switch Active Sports East</a></b>　小川町 2-5-2｜12:00–19:30｜<b>4.8★／701 則</b>｜主打 Salomon，成套買和學生都有折扣<br>
+        同條街還有 <a href="https://www.google.com/maps/search/?api=1&amp;query=select%20snowboard%20%E7%A5%9E%E7%94%B0%E5%B0%8F%E5%B7%9D%E7%94%BA&amp;query_place_id=ChIJJbFHoRqMGGAR2hY5Qw7rq24">select snowboard</a>（4.9★）、<a href="https://www.google.com/maps/search/?api=1&amp;query=Sports%20Bomber%20%E7%A5%9E%E7%94%B0%E5%B0%8F%E5%B7%9D%E7%94%BA&amp;query_place_id=ChIJPRgvsRqMGGARcj7rf_C_9dM">Sports Bomber</a>（4.7★，配件最齊）、<a href="https://www.google.com/maps/search/?api=1&amp;query=THE%20SUNS%20%E7%A5%9E%E7%94%B0%E5%B0%8F%E5%B7%9D%E7%94%BA&amp;query_place_id=ChIJQViZshqMGGARwx-FavPHE4A">THE SUNS</a>（有免稅）。<br>
+        <b>75 分鐘只夠認真逛一到兩家</b>，配靴、配 binding 動輒一小時。</div>
+        <div class="box buy"><span class="lb">選項乙</span><b>日本橋三連發</b>（15:05–16:15）——銀座搭日比谷線到人形町約 8 分鐘。<br>
+        <b><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B0%8F%E7%B6%B2%E7%A5%9E%E7%A4%BE&amp;query_place_id=ChIJmY9L9lCJGGAR3ydy0pQ5y8A">小網神社</a></b>　9:00–17:00｜4.5★／10,543 則｜錢洗弁天，紙鈔硬幣信用卡都能洗，洗完記得擦乾。買貓頭鷹守、強運厄除守<br>
+        <b><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A0%E3%81%97%E3%81%84%E3%81%AA%E3%82%8A%E6%B5%B7%E6%9C%A8%20%E6%97%A5%E6%9C%AC%E6%A9%8B%E5%BA%97&amp;query_place_id=ChIJOYQ3A4KLGGARXLv4RHZlHmA">だしいなり海木 日本橋店</a></b>　週六 10:00–19:00｜4.3★／298 則｜高湯豆皮壽司外帶，走路 10 分鐘<br>
+        <b><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A6%8F%E5%BE%B3%E7%A5%9E%E7%A4%BE&amp;query_place_id=ChIJw9uzC1WJGGARnZWYZveSJFc">福德神社</a></b>　10:00–17:00｜4.3★／3,387 則｜就在海木旁邊 3 分鐘，主事業和財運</div>
+        <div class="box warn"><span class="lb">我的建議</span>選乙。小川町那五家 <b>9/27 方案 B 傍晚還有一次機會</b>（19:00 回東京車站，Burton 開到 19:30，但只剩半小時），而小網神社和海木這趟只有這個空檔。真的要好好買雪具，就得犧牲日本橋整串。</div></div></div>
+
+      <div class="move"><div class="tm">10 分</div><div class="mb">小川町 或 日本橋 → <b>走路或地鐵</b> → 飯店</div></div>
+
+      <div class="ti"><div class="tm">16:30</div><div class="tb">
+        <h4>👗 回飯店換裝</h4>
+        <div class="meta">宴會的場合，抓一小時換衣服整理</div></div></div>
+
+      <div class="move"><div class="tm">10 分</div><div class="mb">大手町 → <b>丸之內線直達 4 站約 8 分鐘</b> → 後樂園 → 走路 1 分鐘（最順的走法）　｜　或都營三田線 → 水道橋，也是走 1 分鐘</div></div>
+
+      <div class="ti"><div class="tm">17:40</div><div class="tb">
+        <h4>🥂 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E3%83%89%E3%83%BC%E3%83%A0%E3%83%9B%E3%83%86%E3%83%AB&amp;query_place_id=ChIJRZ_bSz-MGGARPMc7IsdsZiY">東京巨蛋飯店</a>　天空 B 宴會廳<span class="tag you">你的安排</span></h4>
+        <div class="meta">文京區後樂 1-3-61｜+81 3-5805-2111（代表號）｜4.2★／8,781 則</div>
+        <div class="box warn"><span class="lb">天空在 B1，不是高樓層</span>名字叫「天空」是因為 7.4 公尺高的天花板上浮著發光球體、牆面有星光，做成宇宙的感覺。<b>但實際位置是地下一樓。</b>到了大廳要<b>往下搭</b>，不要往上跑到 42 樓的 Sky Banquet——那是另外的宴會廳。</div>
+        <div class="box buy"><span class="lb">天空 B</span>是把大宴會廳一分為二的其中一半，554 平方公尺、坐席可到 270 人、立食 500 人。同層還有中宴會廳「オーロラ」「シンシア」，<b>看清楚指標再走</b>。前室（ホワイエ）通常就是報到和等候的地方。</div>
+        <div class="box warn"><span class="lb">提早 20 分鐘到</span>有評論明確抱怨<b>「從外面走過去很容易找不到入口」</b>——巨蛋周邊動線很亂。<br>
+        最好走的路線：<b>丸之內線後樂園站，出站走 1 分鐘</b>（跟你飯店同一條線，直達 4 站約 8 分鐘）。JR 總武線和都營三田線的水道橋站也是走 1 分鐘，大江戶線春日站走 5 分鐘。</div>
+        <div class="box buy"><span class="lb">18:00</span>宴會開始</div></div></div>
+    </div>
+    <div class="pcost">因為 18:00 有宴會，這天晚上原本的雪具街和牛舌都移出去了。<b>牛舌日和改排 9/27</b>，東京車站的伴手禮那站也一樣。</div>
+  </div>
+
+  <div class="callout f"><div class="ttl">任意：還想加一間神社</div>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B1%8A%E5%B7%9D%E7%A8%B2%E8%8D%B7%E6%9D%B1%E4%BA%AC%E5%88%A5%E9%99%A2&amp;query_place_id=ChIJK-keEn6MGGARyZaLZnQVdgU">豐川稻荷東京別院</a>（元赤坂 1-4-7｜<b>5:30–20:00</b>｜4.5★／5,092 則）——商賣繁盛，境內幾百尊狐狸像，也能洗錢和信用卡。時間最寬鬆，就在赤坂，可以放在冰川神社之後。</div>
+</section><section id="d3">
+  <div class="shead"><div class="eb">DAY 03</div><h2>二選一</h2>
+  <p>兩案方向完全相反，一整天只跑得動一條線。</p></div><div class="daymap"><div class="mh">9/27 方案 A 路線</div><div class="ms">往西北。影城和溫泉在同一點，回程順路池袋</div><div class="mapwrap"><svg viewBox="0 0 338 231" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+.bgb{fill:#FFFFFF;stroke:#E4DFD3}
+.rt{stroke:#6E5289;stroke-width:1.6;stroke-dasharray:5 4;fill:none;opacity:.75}
+.pin{fill:#6E5289}
+.pn{font:700 10.5px -apple-system,sans-serif;fill:#fff;text-anchor:middle}
+.hubp{fill:#1A1815}
+.sc{stroke:#9A958B;stroke-width:1}
+.sct{font:400 9px -apple-system,sans-serif;fill:#9A958B}
+</style></defs>
+<rect class="bgb" x="4" y="4" width="330" height="223"/>
+<polyline class="rt" points="304.0,197.1 34.0,34.0 38.6,38.0 186.7,74.6 183.5,68.6"/>
+<circle class="hubp" cx="304.0" cy="197.1" r="10"/>
+<text class="pn" x="304.0" y="200.8">H</text>
+<circle class="pin" cx="34.0" cy="34.0" r="10"/>
+<text class="pn" x="34.0" y="37.7">1</text>
+<circle class="pin" cx="38.6" cy="38.0" r="10"/>
+<text class="pn" x="38.6" y="41.7">2</text>
+<circle class="pin" cx="186.7" cy="74.6" r="10"/>
+<text class="pn" x="186.7" y="78.3">3</text>
+<circle class="pin" cx="183.5" cy="68.6" r="10"/>
+<text class="pn" x="183.5" y="72.3">4</text>
+<line class="sc" x1="34" y1="217.11852896975603" x2="85.1" y2="217.11852896975603"/>
+<line class="sc" x1="34" y1="213.11852896975603" x2="34" y2="221.11852896975603"/>
+<line class="sc" x1="85.1" y1="213.11852896975603" x2="85.1" y2="221.11852896975603"/>
+<text class="sct" x="91.1" y="220.61852896975603">2 公里</text>
+<path d="M316 22 l4 10 -4 -2.5 -4 2.5 z" fill="#C0392B"/>
+<text class="sct" x="316" y="44" text-anchor="middle">N</text>
+</svg></div><ol class="maplist"><li><i style="background:#1A1815">H</i><span class="ml-n">飯店</span><span class="ml-t">08:40 出發</span></li><li><i style="background:#6E5289">1</i><span class="ml-n">哈利波特影城</span><span class="ml-t">09:30 影城</span></li><li><i style="background:#6E5289">2</i><span class="ml-n">庭の湯</span><span class="ml-t">15:45 溫泉</span></li><li><i style="background:#6E5289">3</i><span class="ml-n">池袋 PARCO・Animate</span><span class="ml-t">17:40 逛街</span></li><li><i style="background:#6E5289">4</i><span class="ml-n">牛一 池袋</span><span class="ml-t">19:30 燒肉</span></li></ol></div><div class="daymap"><div class="mh">9/27 方案 B 路線</div><div class="ms">鎌倉市區→江之電往西沿海→折回車站</div><div class="mapwrap"><svg viewBox="0 0 358 188" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+.bgb{fill:#FFFFFF;stroke:#E4DFD3}
+.rt{stroke:#4A7C59;stroke-width:1.6;stroke-dasharray:5 4;fill:none;opacity:.75}
+.pin{fill:#4A7C59}
+.pn{font:700 10.5px -apple-system,sans-serif;fill:#fff;text-anchor:middle}
+.hubp{fill:#1A1815}
+.sc{stroke:#9A958B;stroke-width:1}
+.sct{font:400 9px -apple-system,sans-serif;fill:#9A958B}
+</style></defs>
+<rect class="bgb" x="4" y="4" width="350" height="180"/>
+<polyline class="rt" points="290.8,82.3 324.0,36.9 301.9,70.0 201.7,124.5 215.4,96.6 34.0,151.1 72.0,149.8 287.6,92.7"/>
+<circle class="pin" cx="290.8" cy="82.3" r="10"/>
+<text class="pn" x="290.8" y="86.0">1</text>
+<circle class="pin" cx="324.0" cy="36.9" r="10"/>
+<text class="pn" x="324.0" y="40.6">2</text>
+<circle class="pin" cx="301.9" cy="70.0" r="10"/>
+<text class="pn" x="301.9" y="73.7">3</text>
+<circle class="pin" cx="201.7" cy="124.5" r="10"/>
+<text class="pn" x="201.7" y="128.2">4</text>
+<circle class="pin" cx="215.4" cy="96.6" r="10"/>
+<text class="pn" x="215.4" y="100.3">5</text>
+<circle class="pin" cx="34.0" cy="151.1" r="10"/>
+<text class="pn" x="34.0" y="154.8">6</text>
+<circle class="pin" cx="72.0" cy="149.8" r="10"/>
+<text class="pn" x="72.0" y="153.5">7</text>
+<circle class="pin" cx="287.6" cy="92.7" r="10"/>
+<text class="pn" x="287.6" y="96.4">8</text>
+<line class="sc" x1="34" y1="174" x2="92.5" y2="174"/>
+<line class="sc" x1="34" y1="170" x2="34" y2="178"/>
+<line class="sc" x1="92.5" y1="170" x2="92.5" y2="178"/>
+<text class="sct" x="98.5" y="177.5">1 公里</text>
+<path d="M336 22 l4 10 -4 -2.5 -4 2.5 z" fill="#C0392B"/>
+<text class="sct" x="336" y="44" text-anchor="middle">N</text>
+</svg></div><ol class="maplist"><li><i style="background:#4A7C59">1</i><span class="ml-n">鎌倉站</span><span class="ml-t">10:00 抵達</span></li><li><i style="background:#4A7C59">2</i><span class="ml-n">鶴岡八幡宮</span><span class="ml-t">10:20 白鴿御守</span></li><li><i style="background:#4A7C59">3</i><span class="ml-n">鮪おもたせ 栄町</span><span class="ml-t">12:00 午餐</span></li><li><i style="background:#4A7C59">4</i><span class="ml-n">長谷寺</span><span class="ml-t">13:40 見晴台</span></li><li><i style="background:#4A7C59">5</i><span class="ml-n">高德院大佛</span><span class="ml-t">15:00 16:45 關門</span></li><li><i style="background:#4A7C59">6</i><span class="ml-n">鎌倉高校前</span><span class="ml-t">16:05 平交道</span></li><li><i style="background:#4A7C59">7</i><span class="ml-n">七里濱海岸</span><span class="ml-t">16:30 看富士山</span></li><li><i style="background:#4A7C59">8</i><span class="ml-n">御成通り</span><span class="ml-t">17:00 逛街</span></li></ol></div>
+
+  <div class="plan pa">
+    <div class="ph"><div><div class="pn">PLAN A</div><h3>哈利波特影城・溫泉・池袋</h3></div></div>
+    <div class="tl">
+      <div class="move"><div class="tm">40 分</div><div class="mb">大手町 → <b>丸之內線到池袋 → 轉西武池袋線到豐島園</b>；或大江戶線直達。出站走 2 分鐘</div></div>
+      <div class="ti"><div class="tm">09:30</div><div class="tb">
+        <h4>🪄 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%AF%E3%83%BC%E3%83%8A%E3%83%BC%20%E3%83%96%E3%83%A9%E3%82%B6%E3%83%BC%E3%82%B9%20%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%83%84%E3%82%A2%E3%83%BC%E6%9D%B1%E4%BA%AC&amp;query_place_id=ChIJZzjXkvLtGGARm2YFfi26zoU">東京華納兄弟哈利波特影城</a></h4>
+        <div class="meta">練馬區春日町 1-1-7｜週六日 <b>8:30–21:00</b>（以官網當日為準）｜4.7★／18,248 則｜一般 4 小時，哈迷 6 小時</div>
+        <div class="box buy"><span class="lb">吃</span>奶油啤酒 ¥1,250／冰沙版 ¥1,400／爆米花套餐 ¥1,850–2,000。萬聖節有催狂魔、黑魔標記造型限定餐點。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%20%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%83%84%E3%82%A2%E3%83%BC%E6%9D%B1%E4%BA%AC%20%E3%83%90%E3%82%BF%E3%83%BC%E3%83%93%E3%83%BC%E3%83%AB">看照片</a></div>
+        <div class="box buy"><span class="lb">買</span>魔杖、分類帽、巧克力蛙、萬聖節限定周邊。<b>一進場先買魔法袍</b>，拍照差很多。</div>
+        <div class="box warn"><span class="lb">注意</span><b>票要事先買，不賣現場票</b>，不能退不能改。<b>遲到 20 分鐘以上不一定進得去。</b>互動設施要掃 QR，先確認手機有網路。</div></div></div>
+      <div class="ti"><div class="tm">14:30</div><div class="tb">
+        <h4>🛍️ 影城商店</h4>
+        <div class="meta">全球最大的哈利波特商店，<b>離場前留 45–60 分鐘</b></div></div></div>
+      <div class="move"><div class="tm">300 m</div><div class="mb">影城 → <b>走路</b> → 庭の湯</div></div>
+      <div class="ti isopt"><div class="tm">15:45</div><div class="tb">
+        <h4>♨️ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A8%E3%81%97%E3%81%BE%E3%81%88%E3%82%93%E5%BA%AD%E3%81%AE%E6%B9%AF&amp;query_place_id=ChIJKWj2d6ntGGARv7OJvjYsCNo">豊島園 庭の湯</a><span class="tag opt">任意</span></h4>
+        <div class="meta">練馬區向山 3-25-1｜<b>10:00–23:00</b>｜4.2★／3,162 則｜約 ¥2,000–3,000</div>
+        <div class="meta">露天庭園有穿泳衣的混浴區（現場可租）、芬蘭桑拿、16°C 冷水池、躺椅區。</div>
+        <div class="box warn"><span class="lb">注意</span><b>鞋櫃要投 ¥100 硬幣</b>（會退還）。有刺青可能不能入浴。</div>
+        <div class="box opt"><span class="lb">可刪</span>不泡的話 15:40 直接去池袋，多一小時逛街。隔壁<a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%B7%B4%E9%A6%AC%E5%9F%8E%E5%9D%80%E5%85%AC%E5%9C%92&amp;query_place_id=ChIJb0P8QG_tGGARUC749F7Ktmw">練馬城址公園</a>免費、24 小時，順路繞 15 分鐘可以，不值得專程。</div></div></div>
+      <div class="move"><div class="tm">15 分</div><div class="mb">豐島園 → <b>西武線</b> → 池袋　｜　或大江戶線直達新宿西口約 20 分鐘</div></div>
+      <div class="ti"><div class="tm">17:40</div><div class="tb">
+        <h4>🛍️ 池袋</h4>
+        <div class="near"><ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A1%E3%81%84%E3%81%8B%E3%82%8F%E3%82%89%E3%82%93%E3%81%A9%20%E6%B1%A0%E8%A2%8B%E3%83%91%E3%83%AB%E3%82%B3%E5%BA%97&amp;query_place_id=ChIJ768INACNGGARX6707GiXt-s">ちいかわらんど 池袋 PARCO 店</a>　B2F｜11:00–21:00｜比東京車站和原宿店大很多。<b>旺季要用 LINE 抽整理券</b></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%A0%E8%A2%8BPARCO&amp;query_place_id=ChIJZZnCnWeNGGARb-f8twHaqvQ">池袋PARCO</a>　11:00–21:00｜B1 快閃店，樓上 Capcom、JUMP SHOP、EVA</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A2%E3%83%8B%E3%83%A1%E3%82%A4%E3%83%88%E6%B1%A0%E8%A2%8B%E6%9C%AC%E5%BA%97&amp;query_place_id=ChIJi0VhQ2-NGGARGsbajebyPVA">Animate 池袋本店</a>　10:00–21:00｜金氏紀錄<b>全球最大動漫店</b>，9 層</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%B5%E3%83%B3%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%86%E3%82%A3&amp;query_place_id=ChIJU9ZPE2-NGGARwiJyx0Id61E">Sunshine City</a>　10:00–20:00｜寶可夢中心、航海王專賣、<b>整層扭蛋機</b>、水族館</li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%93%E3%83%83%E3%82%AF%E3%82%AB%E3%83%A1%E3%83%A9%20%E6%B1%A0%E8%A2%8B%E6%9C%AC%E5%BA%97&amp;query_place_id=ChIJXzAaDWeNGGARP_PwfI4ooXA">Bic Camera 池袋本店</a>　10:00–22:00｜<b>ReFa 的選擇是東京最全的一家</b>。評論說這裡有<b>免稅再折 7% 的優惠券</b>，所以總價常比 Yodobashi 便宜。同棟連逛 GU</li>
+        </ul></div>
+        <div class="box warn"><span class="lb">注意</span>扭蛋機<b>只吃 ¥100 硬幣</b>，兌幣機常排隊，先在超商換好。</div></div></div>
+      <div class="ti"><div class="tm">19:30</div><div class="tb">
+        <h4>🥩 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%92%8C%E7%89%9B%E4%B8%80%E9%A0%AD%E7%84%BC%E8%82%89%20%E7%89%9B%E4%B8%80%20%E6%B1%A0%E8%A2%8B&amp;query_place_id=ChIJpbeTqu6NGGARCmWawMFsgUg">和牛一頭燒肉 牛一</a></h4>
+        <div class="meta">西池袋 1-43-7 2F｜週日 16:30–23:00｜<b>4.8★</b>／963 則｜西口走路 2 分鐘｜+81 3-6915-2991</div>
+        <div class="box buy"><span class="lb">點</span>和牛各部位拼盤。單點制、不限時、店內沒有背景音樂。店員會講中文和英文。</div>
+        <div class="near"><ul><li><b>你清單上的 Toriton 迴轉壽司</b>　<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%20%E3%81%A8%E3%81%97%E5%85%B8%20%E6%B1%A0%E8%A2%8B%E6%9D%B1%E6%AD%A6&amp;query_place_id=ChIJteJvnl2NGGAR8JeZri4xR-Y">Toriton 池袋東武 11F</a>｜11:00–22:00｜4.1★／2,436 則｜用平板點、現做不放輸送帶。<b>但排隊很兇</b>——評論說 1–3 小時，要開店前 30–40 分鐘去排才進得了第一輪。可以先領號碼牌去逛街，但你這天 17:40 才到池袋，風險偏高</li></ul></div></div></div>
+      <div class="ti"><div class="tm">21:00</div><div class="tb"><h4>🏨 回飯店</h4>
+        <div class="meta">隔天 8:00 出門，睡得夠</div></div></div>
+    </div>
+    <div class="pcost">代價：鎌倉整個放棄，這趟不會去到關東近郊。</div>
+  </div>
+
+  <div class="callout"><div class="ttl">萬聖節：普通票就含，不用加價</div>
+  「闇の魔術のハロウィーン」<b>9/10–11/8</b>，你這天在檔期內，對象是全體入場者。大廳浮著 100 顆以上南瓜燈、館內浮現黑魔標記、死食人出沒、禁忌森林有催狂魔、魔法部被佔領並有死食人演出秀。<br><br>
+  <b>夜間導覽拿不到。</b>全館打暗、30 人一團，用「Revelio 現形咒」找出混在隊伍裡的真人死食人，約 1 小時、¥5,500。但九月只辦 9/25、9/26，之後跳到 10/2 起的週五週六，<b>9/27 沒有場次</b>。</div>
+
+  <div class="vs">O R</div>
+
+  <div class="plan pb">
+    <div class="ph"><div><div class="pn">PLAN B</div><h3>鎌倉・湘南海岸</h3></div></div>
+    <div class="tl">
+      <div class="move"><div class="tm">55 分</div><div class="mb">東京車站 → <b>JR 橫須賀線（久里濱方向）直達，¥1,040</b> → 鎌倉站。<b>地下月台</b>，不用轉車，Suica 直接刷</div></div>
+      <div class="ti"><div class="tm">10:20</div><div class="tb">
+        <h4>⛩️ <a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%B6%B4%E5%B2%A1%E5%85%AB%E5%B9%A1%E5%AE%AE&amp;query_place_id=ChIJiaqQeLhFGGARtTZQEBCtZ6g">鶴岡八幡宮</a></h4>
+        <div class="meta">雪之下 2-1-31｜6:00–20:00｜4.4★／29,358 則｜逛約 1 小時｜車站東口沿若宮大路走 10 分鐘</div>
+        <div class="box buy"><span class="lb">買</span><b>白鴿御守</b>——八幡宮的神使是鴿子。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E9%B6%B4%E5%B2%A1%E5%85%AB%E5%B9%A1%E5%AE%AE%20%E9%B3%A9%E9%88%B4%E5%AE%88">看照片</a></div></div></div>
+      <div class="ti"><div class="tm">11:20</div><div class="tb">
+        <h4>🍪 回程路上的伴手禮</h4>
+        <div class="near"><ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8E%8C%E5%80%89%E7%B4%85%E8%B0%B7%20%E5%85%AB%E5%B9%A1%E5%AE%AE%E5%89%8D%E6%9C%AC%E5%BA%97&amp;query_place_id=ChIJZRwxHsdFGGARQZv5vI1yXkw">鎌倉紅谷 八幡宮前本店</a>　9:30–17:00｜<b>クルミッ子</b>焦糖核桃夾心，鎌倉最強伴手禮 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E9%8E%8C%E5%80%89%E7%B4%85%E8%B0%B7%20%E3%82%AF%E3%83%AB%E3%83%9F%E3%83%83%E5%AD%90%20%E7%BC%B6">看照片</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B1%8A%E5%B3%B6%E5%B1%8B%20%E6%9C%AC%E5%BA%97%20%E9%8E%8C%E5%80%89&amp;query_place_id=ChIJi7tMW8FFGGARMQKMYOyWBlU">豊島屋 本店</a>　9:00–19:00（週三休，9/27 有開）｜<b>鳩サブレー</b> 8 入 ¥1,220，鐵盒很可愛 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E8%B1%8A%E5%B3%B6%E5%B1%8B%20%E9%B3%A9%E3%82%B5%E3%83%96%E3%83%AC%E3%83%BC%20%E7%BC%B6">看照片</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B0%8F%E7%94%BA%E9%80%9A%E3%82%8A%20%E9%8E%8C%E5%80%89&amp;query_place_id=ChIJ-xbzrcNFGGAR2D9QXwfa0j8">小町通</a>｜可樂餅、大佛燒、草莓冰淇淋。觀光客很多，買完就走</li>
+        </ul></div>
+        <div class="box warn"><span class="lb">注意</span>クルミッ子<b>每人限 2 罐，下午兩點就常賣完</b>，所以排在上午。</div></div></div>
+      <div class="ti"><div class="tm">12:00</div><div class="tb">
+        <h4>🍣 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AE%AA%E3%81%8A%E3%82%82%E3%81%9F%E3%81%9B%20%E6%A0%84%E7%94%BA%20%E9%8E%8C%E5%80%89%E5%B0%8F%E7%94%BA%E5%BA%97&amp;query_place_id=ChIJVw-N4JlFGGARt99XMhpiN6s">鮪おもたせ 栄町 小町店</a></h4>
+        <div class="meta">小町 2-9-7 中杉大樓 2F｜週日 <b>10:00–20:00</b>（週一休）｜4.5★／240 則</div>
+        <div class="box buy"><span class="lb">點</span>鮪魚丼（大腹、中腹）、海膽。<b>しらす（吻仔魚）在這裡點</b>，分「生しらす」和「釜揚げ」；生的看當天有沒有捕到、約 10:30 才確定，沒有就點釜揚げ一樣好吃。</div>
+        <div class="meta">在小町通上但藏在二樓，評論一致說是 hidden gem。</div></div></div>
+      <div class="move"><div class="tm">4 分</div><div class="mb">鎌倉站 → <b>江之電 3 站、¥200</b> → 長谷站（約 12 分鐘一班）→ 走路 5 分鐘</div></div>
+      <div class="ti"><div class="tm">13:40</div><div class="tb">
+        <h4>🛕 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8E%8C%E5%80%89%20%E9%95%B7%E8%B0%B7%E5%AF%BA&amp;query_place_id=ChIJ1SdxB_RFGGAR0a33ulBh61c">長谷寺</a></h4>
+        <div class="meta">長谷 3-11-2｜<b>8:00–17:00</b>｜拜觀料 ¥400｜4.5★／17,183 則</div>
+        <div class="meta">9 公尺鍍金觀音像。<b>見晴台</b>可俯瞰市區和海岸線，是這裡最值得的一點。還有辯才天洞窟、成排小地藏，可以洗錢求財。階梯不少。</div></div></div>
+      <div class="move"><div class="tm">7 分</div><div class="mb">長谷寺 → <b>走路</b> → 高德院大佛</div></div>
+      <div class="ti"><div class="tm">15:00</div><div class="tb">
+        <h4>🗿 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E5%BE%B3%E9%99%A2%20%E9%8E%8C%E5%80%89%E5%A4%A7%E4%BB%8F&amp;query_place_id=ChIJBbxJ3_JFGGARTO9rLbCTwx4">高德院（鎌倉大佛）</a></h4>
+        <div class="meta">長谷 4-2-28｜<b>8:00–16:45</b>｜4.4★／32,684 則</div>
+        <div class="meta">13 公尺青銅阿彌陀佛，13 世紀就在了。佛殿 15 世紀被颱風和海嘯摧毀，從此露天坐著。可額外付小額進胎內。</div>
+        <div class="box warn"><span class="lb">注意</span><b>16:45 關門，比長谷寺早，順序不能顛倒。</b></div></div></div>
+      <div class="move"><div class="tm">12 分</div><div class="mb">長谷站 → <b>江之電往藤澤方向</b> → 鎌倉高校前站</div></div>
+      <div class="ti isopt"><div class="tm">16:05</div><div class="tb">
+        <h4>🚃 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8E%8C%E5%80%89%E9%AB%98%E6%A0%A1%E5%89%8D%E9%A7%85&amp;query_place_id=ChIJIRZ85hZPGGARffzavFo4QRk">鎌倉高校前站</a><span class="tag opt">任意</span></h4>
+        <div class="meta">4.4★／1,666 則｜灌籃高手平交道</div>
+        <div class="meta">綠色江之電配上湘南海，約 12 分鐘一班車，拍失敗了等下一班就好。現場有工作人員管制人流。走到停車場那邊天氣好也看得到富士山。</div>
+        <div class="box opt"><span class="lb">實話</span>有評論說「實拍出片普通，短暫打卡即可」。<b>留 15 分鐘就夠</b>，不要久待。</div></div></div>
+      <div class="move"><div class="tm">1 站</div><div class="mb">鎌倉高校前 → <b>江之電</b> → 七里濱（也可以沿海岸走過去）</div></div>
+      <div class="ti isopt"><div class="tm">16:30</div><div class="tb">
+        <h4>🌊 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%83%E9%87%8C%E3%83%B6%E6%B5%9C%E6%B5%B7%E5%B2%B8&amp;query_place_id=ChIJJVoJcURPGGARDdQBeLN5FOo">七里濱海岸</a><span class="tag opt">任意</span></h4>
+        <div class="meta">4.5★／196 則</div>
+        <div class="meta">多則評論說<b>比鎌倉高校前值得</b>——同樣看得到海和江之島，<b>天氣好正面就是富士山</b>。九月還有很多人在衝浪。沙灘可以坐下來休息。</div></div></div>
+      <div class="ti"><div class="tm">17:00</div><div class="tb">
+        <h4>🔀 這裡要決定往哪走</h4>
+        <div class="box buy"><span class="lb">A</span><b>續往江之島</b>（<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B1%9F%E5%B3%B6%E7%A5%9E%E7%A4%BE&amp;query_place_id=ChIJxZW_LuROGGARX3CaDOdyffo">江島神社</a>，4.3★／7,489 則）。買 <b>¥500 電梯票</b>直接上山，評論說超值得，不然要爬很多階梯。必買<b>龍神御守</b>、交通安全守 ¥1,000。約 18:30 離開，20:00 回東京車站。</div>
+        <div class="box buy"><span class="lb">B</span><b>回鎌倉站逛<a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BE%A1%E6%88%90%E9%80%9A%E3%82%8A%20%E9%8E%8C%E5%80%89&amp;query_place_id=ChIJ46tLbGVFGGARlpI0clpELq4">御成通り</a></b>（車站西口正對面，多數店 18:00 前後收）。小町通的安靜版本——獨立小店、小咖啡館、手作雜貨。評論說逛的是本地人和放學的小孩。18:00 回程，19:00 東京車站。</div>
+        <div class="box warn"><span class="lb">注意</span>兩個選不了兩個。江之島階梯多、回程晚；御成通比較輕鬆但少了海景。江之電<b>週日下午回程常要等下一班</b>，時間抓寬。</div></div></div>
+      <div class="move"><div class="tm">10 分</div><div class="mb">東京車站 → <b>都營淺草線或 JR 總武線</b> → 淺草橋</div></div>
+
+      <div class="ti"><div class="tm">19:30</div><div class="tb">
+        <h4>🐄 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%89%9B%E3%81%9F%E3%82%93%E6%97%A5%E5%92%8C%20%E6%B5%85%E8%8D%89%E6%A9%8B&amp;query_place_id=ChIJhWop31yPGGARAkaYMNSfFBM">牛舌日和 淺草橋</a><span class="tag new">牛舌</span></h4>
+        <div class="meta">台東區淺草橋 1-19-2 榛田大樓 1F｜<b>週日 15:00–23:00</b>｜<b>4.9★／1,694 則</b>｜+81 3-5839-2729</div>
+        <div class="box buy"><span class="lb">必點</span><b>12 小時慢煮厚切牛舌</b>——評論說厚、中心粉嫩、入口即化卻還有嚼勁。另外<b>牛舌生魚片</b>、<b>牛舌炸排</b>、<b>牛舌紫蘇天婦羅</b>被反覆點名。還有牛舌涮涮鍋和絞肉排。<a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E7%89%9B%E3%81%9F%E3%82%93%E6%97%A5%E5%92%8C%20%E6%B5%85%E8%8D%89%E6%A9%8B%20%E7%89%9B%E3%82%BF%E3%83%B3">看照片</a></div>
+        <div class="box warn"><span class="lb">一定要訂位</span>評論說「這裡永遠是滿的」。另有兩則抱怨：<b>座位很窄</b>，以及一次漏單漏到最後才上。訂位時可以問有沒有寬一點的位子。</div>
+        <div class="box buy"><span class="lb">備案</span><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%96%9C%E5%8A%A9%20%E6%9D%B1%E4%BA%AC%E9%A7%85&amp;query_place_id=ChIJtxODuv6LGGARNov7NS5d49A">喜助 東京車站店</a>（GRANSTA 八重北 1F｜11:00–23:00｜4.3★／1,160 則｜<b>不用訂位、免進剪票口</b>）。仙台式厚切 1 公分，定食附白飯免費加大和牛舌清湯。不想再跑淺草橋就選這家，吃完直接逛一番街。</div></div></div>
+      <div class="ti"><div class="tm">20:00</div><div class="tb">
+        <h4>🛍️ 一番街 B1 打烊前補貨</h4>
+        <div class="box buy"><span class="lb">限定</span>這天你會進出 JR 剪票口，<b>是唯一能買到 GRANSTA 站內限定的機會</b>——The Maple Mania、Jaga Boulde、TOKYO TULIP ROSE。</div></div></div>
+    </div>
+    <div class="pcost">代價：哈利波特和萬聖節活動整個放棄。<br>逗子葉山那一帶比七里濱更遠，這天塞不進去。</div>
+  </div>
+</section><section id="d4">
+  <div class="shead"><div class="eb">DAY 04</div><h2>賦歸</h2></div><div class="daymap"><div class="mh">9/28 路線</div><div class="ms">走路吃早餐，然後正南下羽田</div><div class="mapwrap"><svg viewBox="0 0 218 488" xmlns="http://www.w3.org/2000/svg">
+<defs><style>
+.bgb{fill:#FFFFFF;stroke:#E4DFD3}
+.rt{stroke:#A8863B;stroke-width:1.6;stroke-dasharray:5 4;fill:none;opacity:.75}
+.pin{fill:#A8863B}
+.pn{font:700 10.5px -apple-system,sans-serif;fill:#fff;text-anchor:middle}
+.hubp{fill:#1A1815}
+.sc{stroke:#9A958B;stroke-width:1}
+.sct{font:400 9px -apple-system,sans-serif;fill:#9A958B}
+</style></defs>
+<rect class="bgb" x="4" y="4" width="210" height="480"/>
+<polyline class="rt" points="101.6,34.0 116.4,55.0 114.5,454.0"/>
+<circle class="hubp" cx="101.6" cy="34.0" r="10"/>
+<text class="pn" x="101.6" y="37.7">H</text>
+<circle class="pin" cx="116.4" cy="55.0" r="10"/>
+<text class="pn" x="116.4" y="58.7">1</text>
+<circle class="pin" cx="114.5" cy="454.0" r="10"/>
+<text class="pn" x="114.5" y="457.7">2</text>
+<line class="sc" x1="34" y1="474" x2="87.2" y2="474"/>
+<line class="sc" x1="34" y1="470" x2="34" y2="478"/>
+<line class="sc" x1="87.2" y1="470" x2="87.2" y2="478"/>
+<text class="sct" x="93.2" y="477.5">2 公里</text>
+<path d="M196 22 l4 10 -4 -2.5 -4 2.5 z" fill="#C0392B"/>
+<text class="sct" x="196" y="44" text-anchor="middle">N</text>
+</svg></div><ol class="maplist"><li><i style="background:#1A1815">H</i><span class="ml-n">飯店</span><span class="ml-t">08:00 出發</span></li><li><i style="background:#A8863B">1</i><span class="ml-n">八重洲 初藤</span><span class="ml-t">07:15 早餐</span></li><li><i style="background:#A8863B">2</i><span class="ml-n">羽田機場 T3</span><span class="ml-t">08:40 抵達</span></li></ol></div>
+  <div class="day">
+    <div class="dtop"><div class="dnum">04</div>
+      <div class="dt"><div class="dd">9月28日 · 月曜日</div><h3>大手町 → 羽田</h3></div>
+      <div class="em">✈️</div></div>
+    <div class="tl">
+      <div class="ti isopt"><div class="tm">06:30</div><div class="tb">
+        <h4>🏊 飯店泳池 或 大浴場<span class="tag opt">任意</span></h4>
+        <div class="meta">39 樓，兩個都 6:30 開</div>
+        <div class="box opt"><span class="lb">可刪</span>這是整趟<b>唯一</b>能用泳池的空檔（9/25 回來時已關、9/26 和 9/27 整天在外面）。游到 7:10 再吃早餐剛好。不游就多睡一小時。</div></div></div>
+      <div class="ti"><div class="tm">07:15</div><div class="tb">
+        <h4>🍚 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%AB%E9%87%8D%E6%B4%B2%20%E5%88%9D%E8%97%A4&amp;query_place_id=ChIJnWEB-PyLGGARaH5C_xV30C0">八重洲 初藤</a></h4>
+        <div class="meta">八重洲地下街北 1 號｜週一 <b>7:00–22:00</b>｜¥ 級</div>
+        <div class="box buy"><span class="lb">點</span>烤魚定食。像家常菜，份量足、出餐快，旁邊坐的都是上班族。</div>
+        <div class="box warn"><span class="lb">注意</span>食券機<b>只有日文</b>，用手機翻譯拍照最快。先投錢再按鈕。</div></div></div>
+      <div class="ti"><div class="tm">08:00</div><div class="tb"><h4>🧳 離開飯店</h4>
+        <div class="meta">大手町直通地鐵，認「Otemachi One」方向</div></div></div>
+      <div class="ti"><div class="tm">08:40</div><div class="tb"><h4>🛫 抵達<a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF%20%E7%AC%AC3%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB&amp;query_place_id=ChIJEzipOlRhGGAR3-3UwuMqAnI">羽田機場 T3</a></h4>
+        <div class="meta">長榮在 T3。報到、托運、出境</div></div></div>
+      <div class="ti"><div class="tm">09:15</div><div class="tb"><h4>🛍️ T3 免稅區採買</h4>
+        <div class="meta">過安檢後還有一個半小時，<b>這是最大的一塊購物時間</b>，前面沒買完的伴手禮全留這裡。</div></div></div>
+      <div class="ti"><div class="tm">10:50</div><div class="tb"><h4>✈️ BR189 起飛</h4>
+        <div class="meta">13:30 抵達台北松山</div></div></div>
+    </div>
+  </div>
+</section><section id="hotel">
+  <div class="shead"><div class="eb">HOTEL</div><h2>飯店</h2></div>
+  <div class="day"><div class="tl" style="padding-top:16px">
+    <div class="ti"><div class="tm">位置</div><div class="tb">
+      <h4><a href="https://www.google.com/maps/search/?api=1&amp;query=Four%20Seasons%20Hotel%20Tokyo%20at%20Otemachi&amp;query_place_id=ChIJ_3Gd30-NGGARnuBcbf29bPA">Four Seasons Hotel Tokyo at Otemachi</a></h4>
+      <div class="meta">千代田區大手町 1-2-1　Otemachi One Tower｜39F 大廳｜4.5★／1,107 則｜<b>+81 3-6810-0600</b></div>
+      <div class="box buy"><span class="lb">交通</span><b>大手町站就在樓下，直通地鐵。</b>丸之內線（→銀座 3 分）、東西線（→飯田橋 6 分）、千代田線、半藏門線、都營三田線<b>五條線交會</b>，這就是為什麼這趟大部分行程都在 20 分鐘內。走到東京車站 8–10 分鐘。</div>
+      <div class="box warn"><span class="lb">注意</span>大手町站很大、出口很多。<b>認「Otemachi One／大手町ワンタワー」的指標</b>，不要跟著「東京車站」方向走。第一次回飯店先用 Google 導航。</div></div></div>
+  </div></div>
+  <table>
+    <tr><th>設施</th><th>時間</th><th>要預約嗎</th></tr>
+    <tr><td><b>39F 室內泳池</b><br>20 公尺恆溫</td><td>6:30–21:30</td><td><b>不用</b>，直接去</td></tr>
+    <tr><td><b>健身房</b></td><td>24 小時</td><td>不用</td></tr>
+    <tr><td><b>大浴場</b><br>含蒸氣室、三溫暖</td><td>6:30–21:30</td><td>不用</td></tr>
+    <tr><td>SPA 療程</td><td>週五～日 10:00–21:30<br>最後入場 20:30</td><td><b>要預約</b></td></tr>
+    <tr><td>免費 wellness 課程</td><td>依當日排程</td><td><b>要預約</b>，住客限定</td></tr>
+    <tr><td>免費腳踏車</td><td>依櫃檯</td><td>建議先問</td></tr>
+  </table>
+  <div class="callout k"><div class="ttl">泳池住客免費，泳衣要自己帶</div>
+  官網賣給<b>非住客</b>的單日通行證是 ¥12,650，住客含在房價裡。泳池不用預約、<b>浴巾現場提供，你只要帶泳衣</b>。大浴場是日式泡湯不用泳衣；方案 A 已經泡過庭の湯的話可以跳過。</div>
+</section>
+
+<section id="money">
+  <div class="shead"><div class="eb">CASH</div><h2>帶多少日幣</h2>
+  <p>大部分餐廳百貨都能刷卡，但神社授與所、扭蛋機、小攤只收現金。</p></div>
+  <div class="money"><span>御守 ×6–8 間（每個 ¥800–2,000）</span><span class="amt">¥12,000</span></div>
+  <div class="money"><span>賽錢、御朱印、洗錢弁天（要零錢）</span><span class="amt">¥2,000</span></div>
+  <div class="money"><span>交通（含鎌倉往返 ¥2,080、江之電）</span><span class="amt">¥6,000</span></div>
+  <div class="money"><span>庭の湯、長谷寺拜觀料等入場費</span><span class="amt">¥4,000</span></div>
+  <div class="money"><span>扭蛋機、小店、路邊小吃</span><span class="amt">¥6,000</span></div>
+  <div class="money"><span>備用（刷卡失敗、臨時計程車）</span><span class="amt">¥10,000</span></div>
+  <div class="total"><span>建議現金</span><span class="amt">¥40,000</span></div>
+  <div class="callout k"><div class="ttl">¥100 硬幣要特別多備</div>
+  庭の湯鞋櫃要投、扭蛋機只吃 ¥100。在超商買小東西時刻意用千元鈔找零。<br><br>
+  <b>不夠的話</b>：7-11 的 ATM 幾乎都能用台灣金融卡提領，24 小時、有中文介面。機場換匯匯率通常比市區差，先換 ¥20,000 應急就好。</div>
+</section>
+
+<section id="tax">
+  <div class="shead"><div class="eb">TAX FREE</div><h2>退稅怎麼退</h2></div>
+  <div class="callout"><div class="ttl">你去的時候還是舊制，在店裡退</div>
+  日本確實要改成機場退稅制，但那是 <b>2026 年 11 月 1 日</b>才上路。你 9 月去還是現行制度：<b>在店裡當場算免稅價，不用到機場辦。</b></div>
+  <table>
+    <tr><td style="width:36px"><b>1</b></td><td>同一天、同一家店，消費滿 <b>¥5,000</b>（稅前）</td></tr>
+    <tr><td><b>2</b></td><td>結帳時<b>主動說 tax free 並出示護照本人</b>。影本不行、朋友的也不行</td></tr>
+    <tr><td><b>3</b></td><td>大型店有專門免稅櫃檯（<b>銀座 LOFT 在 3F、無印在 4F</b>），先在收銀台付含稅金額，再拿收據去櫃檯退現金；有些店直接在收銀台算免稅價</td></tr>
+    <tr><td><b>4</b></td><td>購買紀錄是電子化的，<b>不會再釘紙在護照上</b>。出境海關可能抽查，護照隨身帶</td></tr>
+  </table>
+  <div class="callout"><div class="ttl">兩個容易踩的地雷</div>
+  <b>一、消耗品會被密封，不能在日本境內拆。</b>藥妝、食品、化妝品都算消耗品。拆了就失去免稅資格，出境被查要補稅。想旅途中用的，用一般價格另外買一份。<br><br>
+  <b>二、免稅櫃檯比店面早關。</b>銀座 LOFT 店面開到 21:00，免稅櫃檯 <b>20:00 就停止收件</b>。</div>
+  <div class="callout k"><div class="ttl">分類要記得</div>
+  <b>一般物品</b>（衣服、鞋子、包、電器）和<b>消耗品</b>（藥妝、食品）門檻都是 ¥5,000，但<b>不能合併計算</b>，要各自滿額。Onitsuka Tiger、UNIQLO、COVERMARK 屬一般物品，買了可以直接穿用。</div>
+</section>
+
+<section id="book">
+  <div class="shead"><div class="eb">BOOKING</div><h2>出發前要訂的</h2></div>
+  <table>
+    <tr><th>項目</th><th>說明</th></tr>
+    <tr><td><b>哈利波特影城</b><br>9/27 上午場</td><td>選方案 A 才需要，<b>最優先</b>。官網或 KKday、Klook。不賣現場票、不能退不能改。大人約 ¥6,300–7,300。訂完把電子票<b>存離線</b>。</td></tr>
+    <tr><td><b>牛一 池袋</b><br>9/27 19:30</td><td>+81 3-6915-2991。選方案 A 才需要。</td></tr>
+    <tr><td>喜助 東京車站</td><td>+81 3-3215-2050。不一定要訂，但傍晚要排隊。</td></tr>
+    <tr><td>坊や 日本橋</td><td>+81 3-6225-2347。只有 12 個位子，想換回燒肉一定要訂。</td></tr>
+    <tr><td>飯店 wellness 課程</td><td>住客免費但要預約，check in 時問櫃檯。</td></tr>
+    <tr><td>篝本店</td><td>不接受預約，現場排。</td></tr>
+  </table>
+</section><section id="shop">
+  <div class="shead"><div class="eb">SHOPPING</div><h2>購物</h2>
+  <p>金色標籤是我查評價後挑的，藍色是你指名的。每張卡都可以點「看照片」。</p></div>
+
+  <div class="callout"><div class="ttl">先講一個會被坑的地方</div>
+  銀座的松本清みゆき通店有多則評論實測：同一條面霜在那裡 ¥1,600，走出去另一家藥局只要 ¥1,270；合利他命 270 錠別家 ¥4,980、那裡 ¥5,980，貴了近兩成。評論直指「主要做不知情的外國客人生意」。<br><br>
+  要在銀座買就去 <a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9E%E3%83%84%E3%83%A2%E3%83%88%E3%82%AD%E3%83%A8%E3%82%B7%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJC-uSTeSLGGARyz0KmtpjZcw">松本清 銀座 5-5-1 店</a>（10:00–23:00、三層樓貨最全）但<b>先比價</b>；或改去下面那家。</div>
+
+  <div class="pcard"><div class="jp"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A6%E3%82%A8%E3%83%AB%E3%82%B7%E3%82%A2%E8%96%AC%E5%B1%80%20%E4%BA%AC%E6%A9%8B&amp;query_place_id=ChIJiTHLc-OLGGARzF2_T0E0qLY">Welcia 京橋店</a><span class="tag mine">我挑的</span></div>
+  <div class="tw">京橋 3-1-1｜週六 10:00–20:00、週日 10:00–18:00｜離飯店走路 10 分鐘</div>
+  <div class="ds">有評論說「只有在地人會來，安靜好逛，CANMAKE 和熱門面膜都有，免稅手續很快還多給了折扣」。價格是正常行情，不是觀光客價。</div></div>
+
+  <div class="ckh">淚溝・黑眼圈</div>
+  <div class="pcard"><div class="jp">キャンメイク アイバッグコンシーラー<span class="tag mine">我挑的</span></div><div class="tw">CANMAKE 眼袋遮瑕筆　¥748</div><div class="ds"><b>這就是「淚溝神器」。</b>下眼瞼專用，2022 年在日本爆紅。只有兩色：<b>01 黃米（黃肌）／02 粉米（粉肌）</b>。日本評論的重點是<b>一定要選對色號</b>，選錯會讓臥蠶反而像黑眼圈。藥妝店都有。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%A1%E3%82%A4%E3%82%AF%20%E3%82%A2%E3%82%A4%E3%83%90%E3%83%83%E3%82%B0%E3%82%B3%E3%83%B3%E3%82%B7%E3%83%BC%E3%83%A9%E3%83%BC">看照片</a></div>
+  <div class="pcard"><div class="jp">ザ・セム カバーパーフェクション チップコンシーラー<span class="tag mine">我挑的</span></div><div class="tw">THE SAEM 遮瑕筆　¥603–790</div><div class="ds">日本遮瑕排行榜長年第 1 名的平價款。刷頭型，遮黑眼圈和痘疤都行。韓系但日本藥妝店普遍有賣。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%B6%E3%83%BB%E3%82%BB%E3%83%A0%20%E3%82%AB%E3%83%90%E3%83%BC%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%81%E3%83%83%E3%83%97%E3%82%B3%E3%83%B3%E3%82%B7%E3%83%BC%E3%83%A9%E3%83%BC">看照片</a></div>
+
+  <div class="ckh">我挑的藥妝</div>
+  <div class="pcard"><div class="jp">ロート 肌ラボ 極潤 ヒアルロン液<span class="tag mine">我挑的</span></div><div class="tw">肌研 極潤玻尿酸化妝水　¥800 上下</div><div class="ds">日本藥妝店銷量冠軍級，170ml 大瓶很便宜。質地偏濃稠，拍完很保濕。換季不穩定時的安全牌。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%AD%E3%83%BC%E3%83%88%20%E8%82%8C%E3%83%A9%E3%83%9C%20%E6%A5%B5%E6%BD%A4%20%E3%83%92%E3%82%A2%E3%83%AB%E3%83%AD%E3%83%B3%E6%B6%B2">看照片</a></div>
+  <div class="pcard"><div class="jp">休足時間<span class="tag mine">我挑的</span></div><div class="tw">休足時間 腿部舒緩貼片</div><div class="ds">貼腿的涼感貼片。<b>你這趟每天走一萬步以上</b>，晚上回飯店貼一片隔天差很多。藥妝店、便利商店都有，很便宜。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E4%BC%91%E8%B6%B3%E6%99%82%E9%96%93">看照片</a></div>
+  <div class="pcard"><div class="jp">ロイヒつぼ膏<span class="tag mine">我挑的</span></div><div class="tw">ROIHI 溫感酸痛貼布</div><div class="ds">小圓片，貼肩頸腰特別有名。同樣是走太多的保險。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%AD%E3%82%A4%E3%83%92%E3%81%A4%E3%81%BC%E8%86%8F">看照片</a></div>
+  <div class="pcard"><div class="jp">アパガード プレミオ<span class="tag mine">我挑的</span></div><div class="tw">APAGARD Premio 牙膏　¥870 上下</div><div class="ds">含奈米羥基磷灰石的美白牙膏，日本代購長年熱門。體積小、不貴，適合當伴手禮分送。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%A2%E3%83%91%E3%82%AC%E3%83%BC%E3%83%89%20%E3%83%97%E3%83%AC%E3%83%9F%E3%82%AA">看照片</a></div>
+  <div class="pcard"><div class="jp">ビオレ さらさらパウダーシート<span class="tag mine">我挑的</span></div><div class="tw">Biore 涼感濕紙巾</div><div class="ds">九月下旬東京還會悶熱。日本版比台灣買得到的清涼很多，<b>薄荷版要有心理準備</b>。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%93%E3%82%AA%E3%83%AC%20%E3%81%95%E3%82%89%E3%81%95%E3%82%89%E3%83%91%E3%82%A6%E3%83%80%E3%83%BC%E3%82%B7%E3%83%BC%E3%83%88">看照片</a></div>
+  <div class="pcard"><div class="jp">メンソレータム リップフォンデュ<span class="tag mine">我挑的</span></div><div class="tw">曼秀雷敦 護唇膏　¥630</div><div class="ds">日本人自己買最多的護唇膏之一。有色號可挑（Nude Beige、Rose Pink），當唇膏底也行。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%A1%E3%83%B3%E3%82%BD%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%A0%20%E3%83%AA%E3%83%83%E3%83%97%E3%83%95%E3%82%A9%E3%83%B3%E3%83%87%E3%83%A5">看照片</a></div>
+
+  <div class="ckh">你指名的</div>
+  <div class="pcard"><div class="jp">皇漢堂 ビューラックA<span class="tag you">你指名</span></div><div class="tw">小粉丸／粉紅小藥丸　400 錠</div><div class="ds">第 2 類醫藥品，<b>刺激性瀉藥</b>，睡前吃隔天早上作用。一板可拆成 10 粒小包。<b>第一次從 1–2 粒開始。</b>這是應急用的，不是每天吃的保健品。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E7%9A%87%E6%BC%A2%E5%A0%82%20%E3%83%93%E3%83%A5%E3%83%BC%E3%83%A9%E3%83%83%E3%82%AFA">看照片</a></div>
+  <div class="pcard"><div class="jp">クリーミータッチライナー<span class="tag you">你指名</span></div><div class="tw">CANMAKE 激細滑順眼線膠筆　¥715</div><div class="ds">01 ディープブラック（漆黑）／03 ダークブラウン（深咖啡）。LIPS <b>4.41★／33,514 則</b>，CANMAKE 評論數最多、分數最高的單品。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%BF%E3%83%83%E3%83%81%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC">看照片</a></div>
+  <div class="pcard"><div class="jp">クリームチーク<span class="tag you">你指名</span></div><div class="tw">CANMAKE 腮紅霜　¥638</div><div class="ds">4.33★。珍珠款和一般款都有，色號 05、23 就是你要的。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%E3%83%81%E3%83%BC%E3%82%AF">看照片</a></div>
+  <div class="pcard"><div class="jp">トーンフィルターハイライト<span class="tag you">你指名</span></div><div class="tw">CEZANNE 濾鏡提亮粉餅　2.3g</div><div class="ds">01 フィルターベージュ／02。透明殼、附一支山形刷。台灣長期缺貨的那款。<br><b>先知道它是什麼</b>：是「提亮粉」不是蜜粉餅也不是遮瑕，只能提亮、不能柔焦毛孔。台灣心得說兩頰毛孔明顯處反而更顯毛孔，<b>建議只用在 T 字、眼下、法令紋</b>。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%88%E3%83%BC%E3%83%B3%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">看照片</a></div>
+  <div class="pcard"><div class="jp">イルミネイティングフィニッシュパウダー〜Abloom〜<span class="tag you">你指名</span></div><div class="tw">CANMAKE 光澤型蜜粉餅</div><div class="ds">@cosme <b>4.7★／581 則</b>。五色混合、細珠光，自然提亮有透明感。評論說比マシュマロ 更不厚重、更透。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%A4%E3%83%AB%E3%83%9F%E3%83%8D%E3%82%A4%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%95%E3%82%A3%E3%83%8B%E3%83%83%E3%82%B7%E3%83%A5%E3%83%91%E3%82%A6%E3%83%80%E3%83%BC%E3%80%9CAbloom%E3%80%9C">看照片</a></div>
+  <div class="pcard"><div class="jp">マシュマロフィニッシュパウダー<span class="tag you">你指名</span></div><div class="tw">CANMAKE 霧面型蜜粉餅　¥1,034</div><div class="ds">LIPS 4.11★／3,593 則。遮瑕力 4.82、UV 防護排名第 1。缺點：實測毛孔只減少 17.9%，<b>凹凸毛孔遮不掉</b>。<br>跟上面那款差在<b>光澤 vs 霧面</b>——要透明感選 Illuminating，要控油定妝選 Marshmallow。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%9E%E3%82%B7%E3%83%A5%E3%83%9E%E3%83%AD%E3%83%95%E3%82%A3%E3%83%8B%E3%83%83%E3%82%B7%E3%83%A5%E3%83%91%E3%82%A6%E3%83%80%E3%83%BC">看照片</a></div>
+  <div class="pcard"><div class="jp">パールグロウハイライト<span class="tag you">你指名</span></div><div class="tw">CEZANNE 珍珠光澤打亮</div><div class="ds">4.27★／18,927 則，粉紅系打亮排行第 1。四色：香檳米、玫瑰米、極光薄荷、貝殼粉。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%83%91%E3%83%BC%E3%83%AB%E3%82%B0%E3%83%AD%E3%82%A6%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">看照片</a></div>
+  <div class="pcard"><div class="jp">描くふたえアイライナー<span class="tag you">你指名</span></div><div class="tw">CEZANNE 雙眼皮筆　¥660</div><div class="ds">4.37★／13,669 則，CEZANNE 全品牌最高分。</div><a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E6%8F%8F%E3%81%8F%E3%81%B5%E3%81%9F%E3%81%88%E3%82%A2%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC">看照片</a></div>
+
+  <div class="ckh">指名商品去哪買</div>
+  <table>
+    <tr><th>商品</th><th>哪裡買</th></tr>
+    <tr><td><b>MYTREX Eye Air</b><br>3D 遮光睡眠眼罩 ¥1,980</td><td><b><a href="https://www.google.com/maps/search/?api=1&amp;query=HANDS%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJyak5_-SLGGARvezBKVRicSA">HANDS 銀座</a></b>（銀座 2-2-14 馬羅尼耶門 5–9F｜11:00–21:00），官方通路清單裡有 Hands。也可去<a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%93%E3%83%83%E3%82%AF%E3%82%AB%E3%83%A1%E3%83%A9%20%E6%9C%89%E6%A5%BD%E7%94%BA&amp;query_place_id=ChIJ0dtyq_qLGGARUzYbCCXz1Ic">Bic Camera 有樂町</a>碰運氣。<b>藥妝店和唐吉訶德沒有。</b></td></tr>
+    <tr><td><b>marna Shupatto 遮陽傘</b><br><b>Wpc. 晴雨兩用折疊傘</b></td><td><b><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8A%80%E5%BA%A7%E3%83%AD%E3%83%95%E3%83%88&amp;query_place_id=ChIJqdKZXOSLGGARTJzuDTGhPjI">銀座 LOFT</a></b>或 HANDS 銀座。這兩個牌子是 LOFT／Hands 常駐品牌，傘類專區找得到。</td></tr>
+    <tr><td><b>vim BEAUTY</b><br>keep confidence mist 約 ¥1,650</td><td><b><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8A%80%E5%BA%A7%E3%83%AD%E3%83%95%E3%83%88&amp;query_place_id=ChIJqdKZXOSLGGARTJzuDTGhPjI">銀座 LOFT</a></b>（官方通路明確列出銀座）、<a href="https://www.google.com/maps/search/?api=1&amp;query=PLAZA%20%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJOdtqjeWLGGARaUeGQERxZBA">PLAZA 銀座</a>、HANDS 銀座。<b>藥妝店和唐吉訶德都沒有。很常缺貨，看到就買。</b></td></tr>
+    <tr><td><b>SHISEIDO 超聚光活膚粉底精華</b><br>SPF30 PA+++ 140</td><td>專櫃品，<b>百貨才有</b>——<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%BE%E5%B1%8B%E9%8A%80%E5%BA%A7&amp;query_place_id=ChIJ5UsboeaLGGARV2ODxt0ic1I">松屋銀座</a> 1F 或 GINZA SIX。藥妝店買不到。<b>色號請櫃姐確認</b>，日本編碼可能跟台灣不同。</td></tr>
+    <tr><td>ROSY ROSA 黑粉撲<br>CEZANNE 小顏修修筆<br>CANMAKE 巧麗腮紅組</td><td><b>這三樣我沒把握對到哪個日文品名</b>，中文是代理商翻的。這幾個牌子在藥妝店和 LOFT 都有整櫃，<b>把商品照片存手機給店員看</b>最快。</td></tr>
+  </table>
+  <div class="callout k"><div class="ttl">動線</div>
+  眼罩、兩把傘、vim mist 全部集中在<b>銀座，9/26 下午那段</b>。順序：LOFT（傘＋mist）→ HANDS（眼罩），兩家走路 3 分鐘。</div>
+
+  <div class="ckh">伴手禮：GRANSTA 東京 101 位店長票選</div>
+  <div class="callout k"><div class="ttl">標「需進站」的要進 JR 剪票口</div>
+  你 9/26 晚上逛的一番街 B1 和大丸都是免進站的，買不到那幾款。<b>唯一機會是方案 B（鎌倉）那天</b>搭 JR 進出站時。方案 A 的話只能買免進站的，或到羽田 T3 碰運氣。</div>
+  <table>
+    <tr><th style="width:44px">名次</th><th>商品</th></tr>
+    <tr><td><b>1</b></td><td><b>Brick Bake Bakers</b>　Craft 費南雪 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=Brick%20Bake%20Bakers%20%E6%9D%B1%E4%BA%AC%E9%A7%85%20%E3%83%95%E3%82%A3%E3%83%8A%E3%83%B3%E3%82%B7%E3%82%A7">看照片</a></td></tr>
+    <tr><td><b>2</b></td><td><b>香爐庵</b>　東京鈴最中。日式的，送長輩適合 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E9%A6%99%E7%82%89%E5%BA%B5%20%E6%9D%B1%E4%BA%AC%E9%88%B4%20%E6%9C%80%E4%B8%AD">看照片</a></td></tr>
+    <tr><td><b>3</b></td><td><b>The Maple Mania</b>　楓糖綜合鐵盒　<span class="tag opt">需進站</span> <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E3%82%B6%E3%83%BB%E3%83%A1%E3%83%BC%E3%83%97%E3%83%AB%E3%83%9E%E3%83%8B%E3%82%A2%20%E3%83%A1%E3%83%BC%E3%83%97%E3%83%AB%E3%83%90%E3%82%BF%E3%83%BC%E3%82%AF%E3%83%83%E3%82%AD%E3%83%BC">看照片</a></td></tr>
+    <tr><td><b>4</b></td><td><b>豆一豆</b>　東京紅磚麵包 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E6%9D%B1%E4%BA%AC%E3%81%82%E3%82%93%E3%81%B1%E3%82%93%20%E8%B1%86%E4%B8%80%E8%B1%86%20%E6%9D%B1%E4%BA%AC%E3%82%8C%E3%82%93%E3%81%8C">看照片</a></td></tr>
+    <tr><td><b>5</b></td><td><b>COCORIS</b>　榛果覆盆子夾心餅 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=COCORIS%20%E3%82%B5%E3%83%B3%E3%83%89%E3%82%AF%E3%83%83%E3%82%AD%E3%83%BC">看照片</a></td></tr>
+    <tr><td><b>6</b></td><td><b>Jaga Boulde</b>　Calbee＋×東京香蕉洋芋片，鹹的　<span class="tag opt">需進站</span> <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=Jaga%20Boulde%20%E6%9D%B1%E4%BA%AC%E9%A7%85">看照片</a></td></tr>
+    <tr><td><b>7</b></td><td><b>Curly&#39;s Croissant</b>　頂級可頌禮盒 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=Curly%27s%20Croissant%20TOKYO%20BAKE%20STAND">看照片</a></td></tr>
+    <tr><td><b>8</b></td><td><b>喫茶店に恋して。</b>　焦糖布蕾塔 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=%E5%96%AB%E8%8C%B6%E5%BA%97%E3%81%AB%E6%81%8B%E3%81%97%E3%81%A6%20%E3%83%96%E3%83%AA%E3%83%A5%E3%83%AC">看照片</a></td></tr>
+    <tr><td><b>9</b></td><td><b>(NO) RAISIN SANDWICH</b>　無葡萄乾奶油夾心 <a class="pic" href="https://www.google.com/search?tbm=isch&amp;q=NO%20RAISIN%20SANDWICH%20%E6%9D%B1%E4%BA%AC">看照片</a></td></tr>
+  </table>
+  <div class="callout k"><div class="ttl">免進站也買得到的</div>
+  大丸東京 1F／B1：Sugar Butter Tree 砂糖奶油樹（單包裝好分送）、銀座年輪家、Sable MICHELLE、<a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8E%8C%E5%80%89%E7%B4%85%E8%B0%B7%20%E5%A4%A7%E4%B8%B8%E6%9D%B1%E4%BA%AC%E5%BA%97&amp;query_place_id=ChIJfUyPEvKLGGARrVUhKpSyoMA">鎌倉紅谷クルミッ子</a>。<br><br>
+  非食物類：<a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88&amp;query_place_id=ChIJGeYlX_mLGGARx_4HVNDXOxA">Character Street</a>（一番街 B1）的寶可夢、Chiikawa、吉卜力周邊，耐放也不用管效期。</div>
+</section>
+
+<section id="pack">
+  <div class="shead"><div class="eb">PACKING</div><h2>行李清單</h2></div>
+  <div class="cks">
+    <div class="ckh">行李箱</div><label class="ck"><input type="checkbox"><span>換洗衣服</span></label><label class="ck"><input type="checkbox"><span>內衣襪子帽子</span></label><label class="ck"><input type="checkbox"><span>睡衣</span></label><label class="ck"><input type="checkbox"><span>保健食品</span></label><label class="ck"><input type="checkbox"><span>個人常備藥品</span></label><label class="ck"><input type="checkbox"><span>充電器、轉接頭</span></label><label class="ck"><input type="checkbox"><span>泳衣（39F 泳池）</span></label><label class="ck"><input type="checkbox"><span>伴手禮的空間</span></label>
+    <div class="ckh">盥洗包</div><label class="ck"><input type="checkbox"><span>牙刷牙膏牙線耳塞</span></label><label class="ck"><input type="checkbox"><span>身體乳液</span></label><label class="ck"><input type="checkbox"><span>洗卸產品</span></label><label class="ck"><input type="checkbox"><span>棉花棒</span></label><label class="ck"><input type="checkbox"><span>保養品</span></label><label class="ck"><input type="checkbox"><span>化妝品</span></label><label class="ck"><input type="checkbox"><span>眼鏡</span></label><label class="ck"><input type="checkbox"><span>隱形眼鏡清潔液</span></label>
+    <div class="ckh">隨身行李</div><label class="ck"><input type="checkbox"><span>手機</span></label><label class="ck"><input type="checkbox"><span>錢包、台幣、日幣</span></label><label class="ck"><input type="checkbox"><span>小外套</span></label><label class="ck"><input type="checkbox"><span>衛生紙、濕紙巾</span></label><label class="ck"><input type="checkbox"><span>杯套</span></label><label class="ck"><input type="checkbox"><span>護照</span></label><label class="ck"><input type="checkbox"><span>行動電源</span></label><label class="ck"><input type="checkbox"><span>口罩、筆</span></label><label class="ck"><input type="checkbox"><span>小化妝包</span></label><label class="ck"><input type="checkbox"><span>太陽眼鏡</span></label>
+    <div class="ckh">這趟特別要記得</div><label class="ck"><input type="checkbox"><span>護照（退稅一定要本人正本）</span></label><label class="ck"><input type="checkbox"><span>泳衣</span></label><label class="ck"><input type="checkbox"><span>影城電子票（存離線）</span></label><label class="ck"><input type="checkbox"><span>¥100 硬幣一疊</span></label><label class="ck"><input type="checkbox"><span>現金 ¥40,000</span></label><label class="ck"><input type="checkbox"><span>Suica／PASMO</span></label><label class="ck"><input type="checkbox"><span>好走的鞋</span></label><label class="ck"><input type="checkbox"><span>訂位確認訊息</span></label><label class="ck"><input type="checkbox"><span>空購物袋（店家不一定給）</span></label>
+  </div>
+</section>
+
+<section id="care">
+  <div class="shead"><div class="eb">NOTES</div><h2>各點注意事項</h2><p>出發前掃一遍就好。</p></div>
+  <table>
+    <tr><th style="width:30%">地方</th><th>注意</th></tr>
+    <tr><td><b>所有神社</b></td><td>授與所<b>只收現金</b>。進境內前在手水舍洗手。拍照避開正在參拜的人。不同神社的御守可以一起收藏，不會衝突。</td></tr>
+    <tr><td><b>赤坂冰川神社</b></td><td>花福鈴<b>每月圖案不同</b>，你會拿到九月款。</td></tr>
+    <tr><td><b>小網神社</b></td><td>洗過的錢<b>記得擦乾再收進錢包</b>。</td></tr>
+    <tr><td><b>哈利波特影城</b></td><td>票要事先買、不能退不能改。<b>遲到 20 分鐘以上不一定進得去。</b>互動設施要掃 QR，確認手機有網路。館內走很多路。</td></tr>
+    <tr><td><b>庭の湯</b></td><td>鞋櫃投 <b>¥100 硬幣</b>（會退還）。<b>有刺青可能不能入浴。</b>泳衣可現場租。</td></tr>
+    <tr><td><b>池袋扭蛋</b></td><td>只吃 <b>¥100 硬幣</b>，兌幣機常排隊，先在超商換好。</td></tr>
+    <tr><td><b>ちいかわらんど</b></td><td>旺季要用 <b>LINE 抽整理券</b>，到現場先看門口公告。</td></tr>
+    <tr><td><b>高德院大佛</b></td><td><b>16:45 關門，比長谷寺早</b>，順序不能顛倒。</td></tr>
+    <tr><td><b>江之電</b></td><td>約 12 分鐘一班。<b>週日下午回程常要等下一班</b>，時間抓寬。Suica 可直接刷。</td></tr>
+    <tr><td><b>鎌倉高校前</b></td><td>現場有人管制人流，<b>不要妨礙住戶</b>。拍失敗等下一班車就好。</td></tr>
+    <tr><td><b>江之島</b></td><td>階梯很多，<b>買 ¥500 電梯票</b>省力很多。穿好走的鞋。</td></tr>
+    <tr><td><b>鎌倉紅谷</b></td><td>クルミッ子<b>每人限 2 罐，下午兩點常賣完</b>。</td></tr>
+    <tr><td><b>喜助・牛一</b></td><td>傍晚都會排隊。燒肉會有油煙味，<b>不要穿隔天還要穿的外套</b>。</td></tr>
+    <tr><td><b>銀座 篝</b></td><td>排隊時店員會先來點餐，<b>先想好要什麼</b>。22:00 打烊但會提早停收。</td></tr>
+    <tr><td><b>初藤</b></td><td>食券機只有日文，<b>先投錢再按鈕</b>。</td></tr>
+    <tr><td><b>免稅品</b></td><td>消耗品會密封，<b>在日本境內不能拆</b>。想旅途中用就另外買一份一般價的。</td></tr>
+    <tr><td><b>天氣</b></td><td>九月下旬日夜溫差大，白天偏熱、可能有陣雨或颱風尾。短袖加薄外套，出發前看預報。</td></tr>
+  </table>
+</section>
+
+</div>
+<footer>
+  <div class="fb">東京 四日</div>
+  2026.09.25 — 09.28　·　大手町 四季酒店<br>
+  營業時間、評分、票價、車資為規劃當下查得。<br>
+  影城週末開放時間不同來源寫 21:00 和 22:00 都有，以官網當日公告為準。<br>
+  <b style="color:#fff">出發前一週再確認一次所有店家。</b>
+</footer>
+</div><script>
+var secs=[].slice.call(document.querySelectorAll('section'));
+var links=[].slice.call(document.querySelectorAll('nav a'));
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){
+      links.forEach(function(l){
+        l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id);
+      });
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(function(s){io.observe(s);});
+</script>
+</body></html>
